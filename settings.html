@@ -1,0 +1,27 @@
+<!doctype html><html lang="fa" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>تنظیمات | آوا بیات</title>
+<script>try{if(JSON.parse(localStorage.getItem("avaSettings")||"{}").theme==="dark")document.documentElement.classList.add("dark")}catch(e){}</script>
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="header"><nav class="nav container"><a class="logo" href="index.html">آوا بیات</a><a class="btn" href="en/settings.html">🇬🇧 English</a></nav></header>
+<main><section class="page-head"><div class="container"><a class="back" href="index.html">بازگشت ←</a><h1>⚙️ تنظیمات</h1></div></section>
+<section class="section"><div class="container settings">
+<div class="setting"><h3>🌙 حالت نمایش</h3><p>ظاهر مورد علاقه‌ات را انتخاب کن.</p><div class="options"><button class="btn option" data-theme="light">☀️ روشن</button><button class="btn option" data-theme="dark">🌙 تاریک</button></div></div>
+<div class="setting"><h3>🌐 زبان سایت</h3><p>بین نسخه فارسی و انگلیسی جابه‌جا شو.</p><div class="options"><button class="btn option active">🇮🇷 فارسی</button><a class="btn option" href="en/index.html">🇬🇧 English</a></div></div>
+<div class="setting"><h3>🔤 اندازه نوشته</h3><div class="options"><button class="btn option" data-size="small">کوچک</button><button class="btn option" data-size="medium">متوسط</button><button class="btn option" data-size="large">بزرگ</button></div></div>
+<div class="setting"><h3>🔔 اعلان‌ها</h3><p>برای قابلیت‌های آینده سایت.</p><div class="options"><button class="btn option" data-notify="on">🔔 روشن</button><button class="btn option" data-notify="off">🔕 خاموش</button></div></div>
+<div class="setting"><h3>💾 ذخیره تنظیمات</h3><button class="btn primary" id="save">ذخیره تنظیمات</button></div>
+<div class="setting"><h3>🧹 بازنشانی تنظیمات</h3><p>تنظیمات نمایش و اندازه نوشته به حالت اولیه برمی‌گردند.</p><button class="btn danger" id="reset">بازنشانی تنظیمات</button></div>
+</div></section></main>
+<footer><div class="container footer"><strong>آوا بیات</strong><span>رویای من، بزرگ‌تر از آسمان است. ✨</span></div></footer>
+<script src="script.js"></script>
+<script>
+let s={};try{s=JSON.parse(localStorage.getItem("avaSettings")||"{}")}catch(e){}
+function apply(){const t=s.theme||"light";document.documentElement.classList.toggle("dark",t==="dark");document.body.classList.toggle("dark",t==="dark");document.documentElement.style.fontSize=s.fontSize==="small"?"14px":s.fontSize==="large"?"18px":"16px";document.querySelectorAll("[data-theme]").forEach(b=>b.classList.toggle("active",b.dataset.theme===t));document.querySelectorAll("[data-size]").forEach(b=>b.classList.toggle("active",b.dataset.size===(s.fontSize||"medium")));document.querySelectorAll("[data-notify]").forEach(b=>b.classList.toggle("active",b.dataset.notify===(s.notifications||"on")));}
+document.querySelectorAll("[data-theme]").forEach(b=>b.onclick=()=>{s.theme=b.dataset.theme;localStorage.setItem("avaSettings",JSON.stringify(s));apply();});
+document.querySelectorAll("[data-size]").forEach(b=>b.onclick=()=>{s.fontSize=b.dataset.size;localStorage.setItem("avaSettings",JSON.stringify(s));apply();});
+document.querySelectorAll("[data-notify]").forEach(b=>b.onclick=()=>{s.notifications=b.dataset.notify;localStorage.setItem("avaSettings",JSON.stringify(s));apply();});
+document.getElementById("save").onclick=()=>{localStorage.setItem("avaSettings",JSON.stringify(s));alert("تنظیمات با موفقیت ذخیره شد 🩵");};
+document.getElementById("reset").onclick=()=>{if(confirm("آیا از بازنشانی تنظیمات اطمینان دارید؟")){if(confirm("بله، همه تنظیمات به حالت اولیه برگردند؟")){localStorage.removeItem("avaSettings");s={};apply();}}};
+apply();
+</script></body></html>

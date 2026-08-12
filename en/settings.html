@@ -1,0 +1,20 @@
+<!doctype html><html lang="en" dir="ltr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Settings | Ava Bayat</title><script>try{if(JSON.parse(localStorage.getItem("avaSettings")||"{}").theme==="dark")document.documentElement.classList.add("dark")}catch(e){}</script><link rel="stylesheet" href="style.css"></head><body>
+<header class="header"><nav class="nav container"><a class="logo" href="index.html">Ava Bayat</a><a class="btn" href="../settings.html">🇮🇷 Persian</a></nav></header>
+<main><section class="page-head"><div class="container"><a class="back" href="index.html">← Back</a><h1>⚙️ Settings</h1></div></section><section class="section"><div class="container settings">
+<div class="setting"><h3>🌙 Display mode</h3><p>Choose the appearance you prefer.</p><div class="options"><button class="btn option" data-theme="light">☀️ Light</button><button class="btn option" data-theme="dark">🌙 Dark</button></div></div>
+<div class="setting"><h3>🌐 Site language</h3><p>Switch between the English and Persian versions.</p><div class="options"><button class="btn option active">🇬🇧 English</button><a class="btn option" href="../settings.html">🇮🇷 Persian</a></div></div>
+<div class="setting"><h3>🔤 Text size</h3><div class="options"><button class="btn option" data-size="small">Small</button><button class="btn option" data-size="medium">Medium</button><button class="btn option" data-size="large">Large</button></div></div>
+<div class="setting"><h3>🔔 Notifications</h3><p>This is reserved for future website features.</p><div class="options"><button class="btn option" data-notify="on">🔔 On</button><button class="btn option" data-notify="off">🔕 Off</button></div></div>
+<div class="setting"><h3>💾 Save settings</h3><button class="btn primary" id="save">Save settings</button></div>
+<div class="setting"><h3>🧹 Reset settings</h3><p>Reset display and text settings to their defaults.</p><button class="btn danger" id="reset">Reset settings</button></div>
+</div></section></main><footer><div class="container footer"><strong>Ava Bayat</strong><span>My dream is bigger than the sky. ✨</span></div></footer>
+<script src="script.js"></script><script>
+let s={};try{s=JSON.parse(localStorage.getItem("avaSettings")||"{}")}catch(e){}
+function apply(){const t=s.theme||"light";document.documentElement.classList.toggle("dark",t==="dark");document.body.classList.toggle("dark",t==="dark");document.documentElement.style.fontSize=s.fontSize==="small"?"14px":s.fontSize==="large"?"18px":"16px";document.querySelectorAll("[data-theme]").forEach(b=>b.classList.toggle("active",b.dataset.theme===t));document.querySelectorAll("[data-size]").forEach(b=>b.classList.toggle("active",b.dataset.size===(s.fontSize||"medium")));document.querySelectorAll("[data-notify]").forEach(b=>b.classList.toggle("active",b.dataset.notify===(s.notifications||"on")));}
+document.querySelectorAll("[data-theme]").forEach(b=>b.onclick=()=>{s.theme=b.dataset.theme;localStorage.setItem("avaSettings",JSON.stringify(s));apply();});
+document.querySelectorAll("[data-size]").forEach(b=>b.onclick=()=>{s.fontSize=b.dataset.size;localStorage.setItem("avaSettings",JSON.stringify(s));apply();});
+document.querySelectorAll("[data-notify]").forEach(b=>b.onclick=()=>{s.notifications=b.dataset.notify;localStorage.setItem("avaSettings",JSON.stringify(s));apply();});
+document.getElementById("save").onclick=()=>{localStorage.setItem("avaSettings",JSON.stringify(s));alert("Settings saved successfully 🩵");};
+document.getElementById("reset").onclick=()=>{if(confirm("Are you sure you want to reset your settings?")){localStorage.removeItem("avaSettings");s={};apply();}};
+apply();
+</script></body></html>
