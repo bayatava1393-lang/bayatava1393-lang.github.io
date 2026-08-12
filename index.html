@@ -1,32 +1,120 @@
-<!doctype html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>آوا بیات | سایت شخصی</title>
-<script>try{if(JSON.parse(localStorage.getItem("avaSettings")||"{}").theme==="dark")document.documentElement.classList.add("dark")}catch(e){}</script>
-<link rel="stylesheet" href="style.css">
-</head><body>
-<header class="header"><nav class="nav container">
-<a class="logo" href="index.html">آوا بیات</a>
-<button class="menu" id="menu">☰</button>
-<ul class="nav-links" id="links">
-<li><a href="index.html">خانه</a></li><li><a href="about.html">درباره آوا</a></li>
-<li><a href="projects.html">پروژه‌ها</a></li><li><a href="contact.html">ارتباط با من</a></li>
-<li><a href="settings.html">⚙️ تنظیمات</a></li>
-</ul>
-<a class="btn" href="en/index.html">🇬🇧 English</a>
-</nav></header>
-<main>
-<section class="hero"><div class="container">
-<div class="eyebrow">WELCOME TO AVA'S UNIVERSE ✨</div>
-<h1>رویای من، بزرگ‌تر از آسمان است. ✨</h1>
-<p>جایی برای رویاها، یادگیری، علاقه‌ها و مسیر آینده من.</p>
-<div class="hero-actions"><a class="btn primary" href="about.html">درباره آوا</a><a class="btn" href="projects.html">پروژه‌ها</a></div>
-</div></section>
-<section class="section soft"><div class="container">
-<div class="section-head"><small>دنیای آوا</small><h2>دنیای من را ببین</h2><p>هر بخش صفحه مخصوص خودش را دارد.</p></div>
-<div class="grid"><a class="card" href="about.html"><div class="icon">👩🏻‍🚀</div><h3>درباره آوا</h3><p>من کی هستم و چه چیزهایی دوست دارم.</p></a><a class="card" href="student.html"><div class="icon">🎓</div><h3>دانش‌آموز</h3><p>پایه هفتم و مسیر یادگیری من.</p></a><a class="card" href="programming.html"><div class="icon">💻</div><h3>برنامه‌نویسی</h3><p>دوره‌ها، مهارت‌ها و مدارک من.</p></a><a class="card" href="robotics.html"><div class="icon">🤖</div><h3>رباتیک</h3><p>مقام چهارم رباتیک کشوری.</p></a><a class="card" href="books.html"><div class="icon">📚</div><h3>کتاب‌ها</h3><p>کتاب‌های مورد علاقه‌ام و مشخصات آن‌ها.</p></a><a class="card" href="sports.html"><div class="icon">🏃🏻‍♀️</div><h3>ورزش</h3><p>بادی فلکس در باشگاه کارن.</p></a><a class="card" href="english.html"><div class="icon">🇬🇧</div><h3>زبان انگلیسی</h3><p>Got It 3 و مدارک زبان من.</p></a><a class="card" href="art.html"><div class="icon">🎨</div><h3>نقاشی</h3><p>نقاشی‌های مورد علاقه من.</p></a><a class="card" href="movies.html"><div class="icon">🎬</div><h3>فیلم و سریال</h3><p>فیلم‌ها، انیمه‌ها و سریال‌های مورد علاقه‌ام.</p></a><a class="card" href="music.html"><div class="icon">🎵</div><h3>موسیقی</h3><p>آهنگ‌های مورد علاقه من.</p></a><a class="card" href="games.html"><div class="icon">🧠</div><h3>بازی‌های فکری</h3><p>بازی‌های فکری مورد علاقه من.</p></a><a class="card" href="goals.html"><div class="icon">🎯</div><h3>هدف‌های من</h3><p>سه رویای بزرگ برای آینده.</p></a></div>
-</div></section>
-</main>
-<footer><div class="container footer"><strong>آوا بیات</strong><span>رویای من، بزرگ‌تر از آسمان است. ✨</span><span>© <span id="year"></span></span></div></footer>
-<script src="script.js"></script></body></html>
+:root{
+  --bg:#f8fcfd; --surface:#ffffff; --surface2:#f0fbfc; --text:#24343d;
+  --muted:#71818a; --line:#dfedef; --primary:#55cbd3; --primary-dark:#2fa9b2;
+  --pink:#ffe1ef; --lav:#eee7ff; --shadow:0 12px 34px rgba(61,122,132,.10);
+  --radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Trebuchet MS","Segoe UI",Arial,sans-serif;background:linear-gradient(180deg,#fbffff,#f7fbff);color:var(--text);line-height:1.75;transition:.25s}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,calc(100% - 30px));margin:auto}
+.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
+.nav{min-height:72px;display:flex;align-items:center;gap:18px}
+.logo{font-weight:900;color:var(--primary-dark);margin-right:auto;font-size:19px}
+.nav-links{display:flex;list-style:none;gap:6px;margin:0;padding:0}
+.nav-links a{display:block;padding:8px 12px;border-radius:12px;color:var(--muted);font-weight:700;font-size:14px}
+.nav-links a:hover{background:var(--surface2);color:var(--primary-dark)}
+.menu{display:none;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:11px;padding:6px 9px;font-size:19px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);background:var(--surface);padding:9px 14px;border-radius:13px;font-weight:800;cursor:pointer;color:var(--text)}
+.btn.primary{background:var(--primary);border-color:var(--primary);color:#fff}
+.hero{padding:110px 0 95px;text-align:center;background:radial-gradient(circle at 15% 20%,rgba(85,203,211,.22),transparent 20%),radial-gradient(circle at 85% 25%,rgba(238,231,255,.85),transparent 23%),radial-gradient(circle at 55% 92%,rgba(255,225,239,.62),transparent 28%)}
+.eyebrow{color:var(--primary-dark);font-weight:900;letter-spacing:1.8px;font-size:13px}
+.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.08;margin:17px auto 15px;max-width:900px}
+.hero p{color:var(--muted);font-size:17px;max-width:700px;margin:auto}
+.hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}
+.section{padding:72px 0}.soft{background:rgba(255,255,255,.6);border-block:1px solid var(--line)}
+.section-head{margin-bottom:28px}.section-head small{color:var(--primary-dark);font-weight:900;letter-spacing:1px}.section-head h2{font-size:34px;margin:4px 0}.section-head p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.card{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;min-height:175px;box-shadow:var(--shadow);transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:#a9e5e9}
+.card .icon{font-size:31px}.card h3{margin:10px 0 4px;font-size:18px}.card p{margin:0;color:var(--muted);font-size:13px}
+.page-head{padding:55px 0 25px;background:linear-gradient(135deg,#effcfd,#fff7fb)}
+.page-head h1{font-size:clamp(34px,5vw,58px);margin:12px 0 4px}.lead{color:var(--muted);max-width:750px}
+.back{color:var(--primary-dark);font-weight:800;font-size:14px}
+.detail{display:grid;grid-template-columns:1.45fr .8fr;gap:18px}.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.panel h2{margin-top:0}.panel p{color:var(--muted)}
+.fact{padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted)}.fact strong{color:var(--text)}
+.placeholder{min-height:240px;border-radius:20px;display:grid;place-items:center;text-align:center;padding:24px;background:linear-gradient(135deg,#eafcfd,#f4efff);font-size:26px;font-weight:800;color:#56727c}
+.link{display:inline-flex;margin-top:8px;color:var(--primary-dark);font-weight:900}
+.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{padding:6px 11px;border-radius:999px;background:var(--surface2);border:1px solid var(--line);font-size:13px}
+.settings{display:grid;gap:15px;max-width:760px;margin:auto}.setting{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}.setting p{color:var(--muted)}
+.options{display:flex;gap:9px;flex-wrap:wrap}.option.active{outline:2px solid var(--primary)}
+.danger{background:#fff2f4;color:#a63e52;border-color:#edcbd2}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13px}.footer{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+
+/* Dark mode */
+html.dark body,body.dark{--bg:#0f171b;--surface:#172328;--surface2:#1c3035;--text:#eff7f8;--muted:#aec0c4;--line:#2d4248;--shadow:0 14px 38px rgba(0,0,0,.28);background:linear-gradient(180deg,#0e171a,#111f24)}
+html.dark .header,body.dark .header{background:rgba(16,27,31,.94)}
+html.dark .hero,body.dark .hero{background:radial-gradient(circle at 15% 20%,rgba(50,165,174,.16),transparent 20%),radial-gradient(circle at 85% 25%,rgba(119,98,166,.16),transparent 23%),radial-gradient(circle at 55% 92%,rgba(165,93,130,.12),transparent 28%)}
+html.dark .soft,body.dark .soft{background:#111e22}
+html.dark .page-head,body.dark .page-head{background:linear-gradient(135deg,#14282d,#241c29)}
+html.dark .placeholder,body.dark .placeholder{background:linear-gradient(135deg,#163238,#28243b);color:#b9d8dc}
+html.dark .danger,body.dark .danger{background:#301c23;color:#ff9faf;border-color:#693442}
+
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .detail{grid-template-columns:1fr}
+}
+
+@media(max-width:680px){
+  .menu{display:block}
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:12px;
+    right:12px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:8px;
+    flex-direction:column
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{text-align:center}
+  .grid{grid-template-columns:1fr}
+  .hero{padding:82px 0}
+  .section{padding:58px 0}
+  .footer{flex-direction:column;text-align:center}
+}
+
+/* RTL / Persian */
+html[dir="rtl"] body{
+  font-family:Tahoma,"Segoe UI",Arial,sans-serif
+}
+
+html[dir="rtl"] .logo{
+  margin-right:0;
+  margin-left:auto
+}
+
+html[dir="rtl"] .nav-links{
+  direction:rtl
+}
+
+html[dir="rtl"] .page-head,
+html[dir="rtl"] .section,
+html[dir="rtl"] .panel{
+  text-align:right
+}
+
+html[dir="rtl"] .hero{
+  text-align:center
+}
+
+html[dir="rtl"] .back{
+  display:inline-block
+}
+
+html.dark body,
+body.dark{
+  color:var(--text)
+}
+
+@media(max-width:780px){
+  html[dir="rtl"] .nav-links.open{
+    right:15px;
+    left:15px
+  }
+}
