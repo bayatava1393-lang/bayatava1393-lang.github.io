@@ -1,201 +1,3561 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" id="html">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آوا بیات | سایت شخصی</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <title>Ava Bayat | Personal Website</title>
 
-        body {
-            font-family: Tahoma, sans-serif;
-            background: #f8ffff;
-            color: #234;
-            line-height: 1.8;
-        }
+  <meta
+    name="description"
+    content="Personal website of Ava Bayat - Programming, robotics, books, art, music and dreams."
+  >
 
-        header {
-            background: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 15px rgba(0, 150, 170, 0.08);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+  <style>
+    /* =========================
+       AVA BAYAT PERSONAL WEBSITE
+       ========================= */
 
-        .logo {
-            color: #22b8c8;
-            font-size: 24px;
-            font-weight: bold;
-        }
+    :root {
+      --bg: #f8fcfd;
+      --surface: #ffffff;
+      --surface-soft: #effbfc;
 
-        nav a {
-            text-decoration: none;
-            color: #456;
-            margin: 0 10px;
-            transition: 0.3s;
-        }
+      --text: #18333a;
+      --muted: #6f858a;
 
-        nav a:hover {
-            color: #22b8c8;
-        }
+      --primary: #24b9c6;
+      --primary-dark: #1597a3;
+      --primary-soft: #dff8fa;
 
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #e9ffff, #ffffff);
-        }
+      --pink: #f7e8ef;
+      --purple: #eeeafd;
 
-        .hero h1 {
-            font-size: 48px;
-            color: #159aaa;
-            margin-bottom: 15px;
-        }
+      --border: #dcecee;
 
-        .hero p {
-            font-size: 20px;
-            color: #657;
-            margin-bottom: 25px;
-        }
+      --shadow:
+        0 14px 40px rgba(31, 103, 110, 0.10);
 
-        .button {
-            display: inline-block;
-            padding: 10px 25px;
-            border-radius: 25px;
-            background: #22b8c8;
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+      --radius: 24px;
+    }
 
-        .button:hover {
-            background: #159aaa;
-            transform: translateY(-2px);
-        }
 
-        section {
-            padding: 80px 10%;
-            text-align: center;
-        }
+    /* DARK MODE */
 
-        section h2 {
-            color: #159aaa;
-            margin-bottom: 25px;
-            font-size: 30px;
-        }
+    html.dark {
+      --bg: #0d1719;
+      --surface: #142326;
+      --surface-soft: #102023;
 
-        .projects {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+      --text: #edfafa;
+      --muted: #a3b9bd;
 
-        .card {
-            background: white;
-            width: 280px;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 5px 25px rgba(0, 150, 170, 0.08);
-        }
+      --primary: #5bd7df;
+      --primary-dark: #8fe8ed;
+      --primary-soft: #19363a;
 
-        .card h3 {
-            color: #22aabb;
-            margin-bottom: 10px;
-        }
+      --pink: #291f29;
+      --purple: #222033;
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #e9ffff;
-            color: #567;
-        }
+      --border: #294247;
 
-        @media (max-width: 700px) {
-            header {
-                flex-direction: column;
-                gap: 10px;
-            }
+      --shadow:
+        0 14px 40px rgba(0, 0, 0, 0.28);
+    }
 
-            .hero h1 {
-                font-size: 36px;
-            }
 
-            nav a {
-                font-size: 14px;
-            }
-        }
-    </style>
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+
+      font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+      line-height: 1.8;
+
+      transition:
+        background .25s,
+        color .25s;
+    }
+
+
+    html[dir="ltr"] body {
+      font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    button {
+      font-family: inherit;
+    }
+
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+
+    /* =========================
+       HEADER
+       ========================= */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background:
+        color-mix(
+          in srgb,
+          var(--surface) 90%,
+          transparent
+        );
+
+      backdrop-filter: blur(15px);
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+
+    nav {
+      min-height: 76px;
+
+      display: flex;
+      align-items: center;
+
+      gap: 18px;
+    }
+
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+
+      color: var(--text);
+
+      margin-left: auto;
+    }
+
+
+    html[dir="ltr"] .logo {
+      margin-left: 0;
+      margin-right: auto;
+    }
+
+
+    .logo span {
+      color: var(--primary);
+    }
+
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 20px;
+
+      list-style: none;
+
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 700;
+
+      color: var(--muted);
+    }
+
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+
+    .nav-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+
+    .nav-button {
+      border:
+        1px solid var(--border);
+
+      background:
+        var(--surface);
+
+      color:
+        var(--text);
+
+      padding:
+        9px 14px;
+
+      border-radius:
+        14px;
+
+      cursor:
+        pointer;
+
+      font-weight:
+        800;
+    }
+
+
+    .nav-button:hover {
+      border-color:
+        var(--primary);
+    }
+
+
+    .language-button {
+      color: white;
+
+      background:
+        var(--primary);
+
+      border-color:
+        var(--primary);
+    }
+
+
+    .menu-button {
+      display: none;
+    }
+
+
+    /* =========================
+       HERO
+       ========================= */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      min-height: 620px;
+
+      display: flex;
+      align-items: center;
+
+      text-align: center;
+
+      background:
+        radial-gradient(
+          circle at 85% 18%,
+          var(--primary-soft) 0 13%,
+          transparent 14%
+        ),
+        radial-gradient(
+          circle at 12% 82%,
+          var(--purple) 0 12%,
+          transparent 13%
+        );
+    }
+
+
+    .hero-content {
+      width: 100%;
+      padding: 90px 0;
+    }
+
+
+    .welcome {
+      display: inline-block;
+
+      color:
+        var(--primary-dark);
+
+      font-size:
+        14px;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        2px;
+
+      margin-bottom:
+        15px;
+    }
+
+
+    .hero h1 {
+      max-width:
+        850px;
+
+      margin:
+        0 auto 20px;
+
+      font-size:
+        clamp(
+          38px,
+          7vw,
+          72px
+        );
+
+      line-height:
+        1.25;
+    }
+
+
+    .hero-description {
+      max-width:
+        680px;
+
+      margin:
+        auto;
+
+      color:
+        var(--muted);
+
+      font-size:
+        18px;
+    }
+
+
+    .hero-buttons {
+      display:
+        flex;
+
+      justify-content:
+        center;
+
+      gap:
+        12px;
+
+      flex-wrap:
+        wrap;
+
+      margin-top:
+        30px;
+    }
+
+
+    .button {
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      min-height:
+        46px;
+
+      padding:
+        10px 20px;
+
+      border-radius:
+        15px;
+
+      border:
+        1px solid var(--border);
+
+      background:
+        var(--surface);
+
+      font-weight:
+        800;
+
+      cursor:
+        pointer;
+    }
+
+
+    .button.primary {
+      color:
+        white;
+
+      background:
+        var(--primary);
+
+      border-color:
+        var(--primary);
+    }
+
+
+    /* =========================
+       SECTIONS
+       ========================= */
+
+    section {
+      scroll-margin-top:
+        90px;
+    }
+
+
+    .section {
+      padding:
+        80px 0;
+    }
+
+
+    .section-soft {
+      background:
+        var(--surface-soft);
+    }
+
+
+    .section-heading {
+      margin-bottom:
+        32px;
+    }
+
+
+    .section-label {
+      color:
+        var(--primary);
+
+      font-size:
+        13px;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        2px;
+    }
+
+
+    .section-heading h2 {
+      margin:
+        8px 0 5px;
+
+      font-size:
+        clamp(
+          28px,
+          5vw,
+          42px
+        );
+    }
+
+
+    .section-heading p {
+      color:
+        var(--muted);
+
+      margin:
+        0;
+    }
+
+
+    /* =========================
+       CARDS
+       ========================= */
+
+    .grid {
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(
+          3,
+          1fr
+        );
+
+      gap:
+        18px;
+    }
+
+
+    .card {
+      background:
+        var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        var(--radius);
+
+      padding:
+        25px;
+
+      box-shadow:
+        var(--shadow);
+
+      transition:
+        .2s;
+    }
+
+
+    .card:hover {
+      transform:
+        translateY(-5px);
+
+      border-color:
+        var(--primary);
+    }
+
+
+    .card-icon {
+      font-size:
+        38px;
+    }
+
+
+    .card h3 {
+      margin:
+        10px 0 5px;
+
+      font-size:
+        21px;
+    }
+
+
+    .card p {
+      margin:
+        0;
+
+      color:
+        var(--muted);
+    }
+
+
+    /* =========================
+       DETAIL BOXES
+       ========================= */
+
+    .detail-grid {
+      display:
+        grid;
+
+      grid-template-columns:
+        1.5fr .8fr;
+
+      gap:
+        20px;
+    }
+
+
+    .panel {
+      background:
+        var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        var(--radius);
+
+      padding:
+        28px;
+
+      box-shadow:
+        var(--shadow);
+    }
+
+
+    .panel h3 {
+      margin-top:
+        0;
+    }
+
+
+    .fact {
+      padding:
+        12px 0;
+
+      border-bottom:
+        1px solid var(--border);
+    }
+
+
+    /* =========================
+       CERTIFICATES
+       ========================= */
+
+    .certificate-grid {
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(
+          2,
+          1fr
+        );
+
+      gap:
+        18px;
+    }
+
+
+    .certificate {
+      background:
+        var(--surface);
+
+      padding:
+        15px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        20px;
+    }
+
+
+    .certificate img {
+      display:
+        block;
+
+      width:
+        100%;
+
+      border-radius:
+        14px;
+
+      margin-bottom:
+        12px;
+    }
+
+
+    .certificate h3 {
+      margin:
+        6px 0;
+    }
+
+
+    .certificate p {
+      color:
+        var(--muted);
+
+      margin:
+        0;
+    }
+
+
+    /* =========================
+       BOOK / MOVIE / GAME ITEMS
+       ========================= */
+
+    .item-list {
+      display:
+        grid;
+
+      gap:
+        16px;
+    }
+
+
+    .item {
+      background:
+        var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        20px;
+
+      padding:
+        22px;
+    }
+
+
+    .item h3 {
+      margin:
+        0 0 7px;
+    }
+
+
+    .item p {
+      color:
+        var(--muted);
+
+      margin:
+        5px 0;
+    }
+
+
+    .search-link {
+      display:
+        inline-block;
+
+      margin-top:
+        10px;
+
+      color:
+        var(--primary-dark);
+
+      font-weight:
+        800;
+    }
+
+
+    /* =========================
+       SETTINGS
+       ========================= */
+
+    .settings {
+      display:
+        grid;
+
+      gap:
+        16px;
+
+      max-width:
+        800px;
+    }
+
+
+    .setting {
+      background:
+        var(--surface);
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        20px;
+
+      padding:
+        22px;
+    }
+
+
+    .setting h3 {
+      margin:
+        0 0 5px;
+    }
+
+
+    .setting p {
+      color:
+        var(--muted);
+    }
+
+
+    .options {
+      display:
+        flex;
+
+      gap:
+        10px;
+
+      flex-wrap:
+        wrap;
+    }
+
+
+    .option {
+      padding:
+        10px 15px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        14px;
+
+      color:
+        var(--text);
+
+      background:
+        var(--surface);
+
+      cursor:
+        pointer;
+    }
+
+
+    .option.active {
+      color:
+        var(--primary-dark);
+
+      border-color:
+        var(--primary);
+
+      background:
+        var(--primary-soft);
+    }
+
+
+    .reset-button {
+      color:
+        #a53f50;
+
+      border:
+        1px solid #e8bcc4;
+
+      background:
+        #fff0f3;
+
+      padding:
+        11px 17px;
+
+      border-radius:
+        14px;
+
+      cursor:
+        pointer;
+
+      font-weight:
+        800;
+    }
+
+
+    html.dark .reset-button {
+      color:
+        #ff9dac;
+
+      background:
+        #301c22;
+
+      border-color:
+        #68333e;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      padding:
+        30px 0;
+
+      border-top:
+        1px solid var(--border);
+    }
+
+
+    .footer-content {
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      gap:
+        20px;
+
+      color:
+        var(--muted);
+
+      font-size:
+        14px;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+       ========================= */
+
+    @media (
+      max-width: 850px
+    ) {
+
+      .grid {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+
+      .detail-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .nav-links {
+        display:
+          none;
+
+        position:
+          absolute;
+
+        top:
+          76px;
+
+        left:
+          4%;
+
+        right:
+          4%;
+
+        flex-direction:
+          column;
+
+        align-items:
+          stretch;
+
+        padding:
+          20px;
+
+        border:
+          1px solid var(--border);
+
+        background:
+          var(--surface);
+
+        border-radius:
+          20px;
+
+        box-shadow:
+          var(--shadow);
+      }
+
+
+      .nav-links.open {
+        display:
+          flex;
+      }
+
+
+      .menu-button {
+        display:
+          inline-flex;
+      }
+
+    }
+
+
+    @media (
+      max-width: 560px
+    ) {
+
+      .grid,
+      .certificate-grid {
+        grid-template-columns:
+          1fr;
+      }
+
+
+      .hero {
+        min-height:
+          540px;
+      }
+
+
+      .hero-content {
+        padding:
+          65px 0;
+      }
+
+
+      .nav-button {
+        padding:
+          8px 10px;
+      }
+
+
+      .footer-content {
+        flex-direction:
+          column;
+
+        text-align:
+          center;
+      }
+
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-    <header>
-        <div class="logo">آوا بیات</div>
 
-        <nav>
-            <a href="#home">خانه</a>
-            <a href="#about">درباره من</a>
-            <a href="#projects">پروژه‌ها</a>
-            <a href="#contact">ارتباط با من</a>
-        </nav>
-    </header>
+  <!-- =========================
+       HEADER
+       ========================= -->
 
-    <main>
+  <header>
 
-        <section class="hero" id="home">
-            <h1>سلام، من آوا هستم 🌷</h1>
-            <p>به سایت شخصی من خوش اومدی!</p>
-            <a href="#about" class="button">بیشتر درباره من</a>
-        </section>
+    <nav class="container">
 
-        <section id="about">
-            <h2>درباره من</h2>
-            <p>
-                اینجا قراره کمی درباره من، علاقه‌مندی‌ها و کارهایی
-                که انجام می‌دم بنویسم.
+      <a
+        class="logo"
+        href="#home"
+      >
+        AVA<span>.</span>
+      </a>
+
+
+      <button
+        class="nav-button menu-button"
+        id="menuButton"
+        aria-label="Menu"
+      >
+        ☰
+      </button>
+
+
+      <ul
+        class="nav-links"
+        id="navLinks"
+      >
+
+        <li>
+          <a
+            href="#home"
+            data-fa="خانه"
+            data-en="Home"
+          >
+            خانه
+          </a>
+        </li>
+
+
+        <li>
+          <a
+            href="#about"
+            data-fa="درباره آوا"
+            data-en="About Ava"
+          >
+            درباره آوا
+          </a>
+        </li>
+
+
+        <li>
+          <a
+            href="#projects"
+            data-fa="پروژه‌ها"
+            data-en="Projects"
+          >
+            پروژه‌ها
+          </a>
+        </li>
+
+
+        <li>
+          <a
+            href="#contact"
+            data-fa="ارتباط"
+            data-en="Contact"
+          >
+            ارتباط
+          </a>
+        </li>
+
+
+        <li>
+          <a
+            href="#settings"
+            data-fa="تنظیمات"
+            data-en="Settings"
+          >
+            تنظیمات
+          </a>
+        </li>
+
+      </ul>
+
+
+      <div class="nav-buttons">
+
+        <button
+          class="nav-button"
+          id="themeTopButton"
+          title="Light / Dark"
+        >
+          🌙
+        </button>
+
+
+        <button
+          class="nav-button language-button"
+          id="languageButton"
+        >
+          🇬🇧 English
+        </button>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =========================
+         HOME
+         ========================= -->
+
+    <section
+      class="hero"
+      id="home"
+    >
+
+      <div
+        class="container hero-content"
+      >
+
+        <div class="welcome">
+          WELCOME TO AVA'S UNIVERSE ✨
+        </div>
+
+
+        <h1
+          data-fa="رویای من، بزرگ‌تر از آسمان است. ✨"
+          data-en="My dream is bigger than the sky. ✨"
+        >
+          رویای من، بزرگ‌تر از آسمان است. ✨
+        </h1>
+
+
+        <p
+          class="hero-description"
+          data-fa="جایی برای رویاها، یادگیری، علاقه‌ها و مسیر آینده من."
+          data-en="A place for dreams, learning, interests, and my future path."
+        >
+          جایی برای رویاها، یادگیری، علاقه‌ها و مسیر آینده من.
+        </p>
+
+
+        <div class="hero-buttons">
+
+          <a
+            class="button primary"
+            href="#about"
+            data-fa="درباره من"
+            data-en="About Me"
+          >
+            درباره من
+          </a>
+
+
+          <a
+            class="button"
+            href="#programming"
+            data-fa="برنامه‌نویسی"
+            data-en="Programming"
+          >
+            برنامه‌نویسی
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+         ========================= -->
+
+    <section
+      class="section"
+      id="about"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            AVA BAYAT
+          </div>
+
+          <h2
+            data-fa="درباره آوا"
+            data-en="About Ava"
+          >
+            درباره آوا
+          </h2>
+
+          <p
+            data-fa="چیزهایی که بخشی از دنیای من هستند."
+            data-en="The things that are part of my world."
+          >
+            چیزهایی که بخشی از دنیای من هستند.
+          </p>
+
+        </div>
+
+
+        <div class="grid">
+
+
+          <a
+            class="card"
+            href="#student"
+          >
+            <div class="card-icon">🎓</div>
+
+            <h3
+              data-fa="دانش‌آموز"
+              data-en="Student"
+            >
+              دانش‌آموز
+            </h3>
+
+            <p
+              data-fa="دانش‌آموز پایه هفتم و مسیر یادگیری من."
+              data-en="Grade 7 and my learning journey."
+            >
+              دانش‌آموز پایه هفتم و مسیر یادگیری من.
             </p>
-        </section>
+          </a>
 
-        <section id="projects">
-            <h2>پروژه‌های من</h2>
 
-            <div class="projects">
-                <div class="card">
-                    <h3>پروژه اول</h3>
-                    <p>به‌زودی پروژه‌های من اینجا قرار می‌گیرند.</p>
-                </div>
 
-                <div class="card">
-                    <h3>پروژه دوم</h3>
-                    <p>این قسمت برای معرفی پروژه‌های آینده است.</p>
-                </div>
+          <a
+            class="card"
+            href="#programming"
+          >
+            <div class="card-icon">💻</div>
+
+            <h3
+              data-fa="برنامه‌نویسی"
+              data-en="Programming"
+            >
+              برنامه‌نویسی
+            </h3>
+
+            <p
+              data-fa="دوره‌ها، تجربه‌ها و مدارک برنامه‌نویسی من."
+              data-en="My programming courses, experience and certificates."
+            >
+              دوره‌ها، تجربه‌ها و مدارک برنامه‌نویسی من.
+            </p>
+          </a>
+
+
+
+          <a
+            class="card"
+            href="#robotics"
+          >
+            <div class="card-icon">🤖</div>
+
+            <h3
+              data-fa="رباتیک"
+              data-en="Robotics"
+            >
+              رباتیک
+            </h3>
+
+            <p
+              data-fa="مقام چهارم رباتیک کشوری."
+              data-en="Fourth place in a national robotics competition."
+            >
+              مقام چهارم رباتیک کشوری.
+            </p>
+          </a>
+
+
+
+          <a
+            class="card"
+            href="#books"
+          >
+            <div class="card-icon">📚</div>
+
+            <h3
+              data-fa="کتاب‌ها"
+              data-en="Books"
+            >
+              کتاب‌ها
+            </h3>
+
+            <p
+              data-fa="کتاب‌های مورد علاقه من."
+              data-en="My favorite books."
+            >
+              کتاب‌های مورد علاقه من.
+            </p>
+          </a>
+
+
+
+          <a
+            class="card"
+            href="#sports"
+          >
+            <div class="card-icon">🏃🏻‍♀️</div>
+
+            <h3
+              data-fa="ورزش"
+              data-en="Sports & Gym"
+            >
+              ورزش
+            </h3>
+
+            <p
+              data-fa="بادی فلکس در باشگاه کارن."
+              data-en="Body Flex at Karen Gym."
+            >
+              بادی فلکس در باشگاه کارن.
+            </p>
+          </a>
+
+
+
+          <a
+            class="card"
+            href="#english"
+          >
+            <div class="card-icon">🇬🇧</div>
+
+            <h3
+              data-fa="زبان انگلیسی"
+              data-en="English"
+            >
+              زبان انگلیسی
+            </h3>
+
+            <p
+              data-fa="مسیر یادگیری زبان انگلیسی من."
+              data-en="My English learning journey."
+            >
+              مسیر یادگیری زبان انگلیسی من.
+            </p>
+          </a>
+
+
+
+          <a
+            class="card"
+            href="#art"
+          >
+            <div class="card-icon">🎨</div>
+
+            <h3
+              data-fa="نقاشی"
+              data-en="Art"
+            >
+              نقاشی
+            </h3>
+
+            <p
+              data-fa="بخش هنری دنیای من."
+              data-en="The artistic side of my world."
+            >
+              بخش هنری دنیای من.
+            </p>
+          </a>
+
+
+
+          <a
+            class="card"
+            href="#movies"
+          >
+            <div class="card-icon">🎬</div>
+
+            <h3
+              data-fa="فیلم و سریال"
+              data-en="Movies & Series"
+            >
+              فیلم و سریال
+            </h3>
+
+            <p
+              data-fa="فیلم‌ها و سریال‌هایی که دوست دارم."
+              data-en="Movies and series I enjoy."
+            >
+              فیلم‌ها و سریال‌هایی که دوست دارم.
+            </p>
+          </a>
+
+
+
+          <a
+            class="card"
+            href="#music"
+          >
+            <div class="card-icon">🎵</div>
+
+            <h3
+              data-fa="موسیقی"
+              data-en="Music"
+            >
+              موسیقی
+            </h3>
+
+            <p
+              data-fa="آهنگ‌های مورد علاقه من."
+              data-en="My favorite songs."
+            >
+              آهنگ‌های مورد علاقه من.
+            </p>
+          </a>
+
+
+
+          <a
+            class="card"
+            href="#games"
+          >
+            <div class="card-icon">🧠</div>
+
+            <h3
+              data-fa="بازی‌های فکری"
+              data-en="Board Games"
+            >
+              بازی‌های فکری
+            </h3>
+
+            <p
+              data-fa="بازی‌های فکری مورد علاقه من."
+              data-en="My favorite board games."
+            >
+              بازی‌های فکری مورد علاقه من.
+            </p>
+          </a>
+
+
+
+          <a
+            class="card"
+            href="#goals"
+          >
+            <div class="card-icon">🚀</div>
+
+            <h3
+              data-fa="هدف‌های من"
+              data-en="My Goals"
+            >
+              هدف‌های من
+            </h3>
+
+            <p
+              data-fa="رویاهای بزرگی که برای آینده دارم."
+              data-en="The big dreams I have for my future."
+            >
+              رویاهای بزرگی که برای آینده دارم.
+            </p>
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         STUDENT
+         ========================= -->
+
+    <section
+      class="section section-soft"
+      id="student"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            STUDENT
+          </div>
+
+          <h2
+            data-fa="🎓 دانش‌آموز"
+            data-en="🎓 Student"
+          >
+            🎓 دانش‌آموز
+          </h2>
+
+        </div>
+
+
+        <div class="detail-grid">
+
+          <div class="panel">
+
+            <h3
+              data-fa="مسیر یادگیری من"
+              data-en="My Learning Journey"
+            >
+              مسیر یادگیری من
+            </h3>
+
+            <p
+              data-fa="من دانش‌آموز پایه هفتم هستم. در کنار مدرسه، برنامه‌نویسی و زبان انگلیسی را دنبال می‌کنم و دوست دارم مهارت‌های حل مسئله و خلاقیت را بیشتر کنم."
+              data-en="I am a Grade 7 student. Alongside school, I study programming and English and enjoy improving my problem-solving and creative skills."
+            >
+              من دانش‌آموز پایه هفتم هستم. در کنار مدرسه،
+              برنامه‌نویسی و زبان انگلیسی را دنبال می‌کنم.
+            </p>
+
+          </div>
+
+
+          <aside class="panel">
+
+            <div class="fact">
+
+              <strong
+                data-fa="پایه:"
+                data-en="Grade:"
+              >
+                پایه:
+              </strong>
+
+              <span
+                data-fa=" هفتم"
+                data-en=" 7"
+              >
+                هفتم
+              </span>
+
             </div>
-        </section>
 
-        <section id="contact">
-            <h2>ارتباط با من</h2>
-            <p>به‌زودی راه‌های ارتباطی من اینجا قرار می‌گیرد.</p>
-        </section>
 
-    </main>
+            <div class="fact">
 
-    <footer>
-        © 2026 Ava Bayat | هرگز تسلیم نشو 🩵
-    </footer>
+              <strong
+                data-fa="هدف:"
+                data-en="Goal:"
+              >
+                هدف:
+              </strong>
+
+              <span
+                data-fa=" ساختن یک پایه قوی برای آینده"
+                data-en=" Building a strong foundation for the future"
+              >
+                ساختن یک پایه قوی برای آینده
+              </span>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROGRAMMING
+         ========================= -->
+
+    <section
+      class="section"
+      id="programming"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            PROGRAMMING
+          </div>
+
+          <h2
+            data-fa="💻 برنامه‌نویسی"
+            data-en="💻 Programming"
+          >
+            💻 برنامه‌نویسی
+          </h2>
+
+          <p
+            data-fa="یکی از علاقه‌های اصلی من."
+            data-en="One of my main interests."
+          >
+            یکی از علاقه‌های اصلی من.
+          </p>
+
+        </div>
+
+
+        <div class="panel">
+
+          <p
+            data-fa="برنامه‌نویسی را دوست دارم چون می‌توانم ایده‌هایم را به چیزهای واقعی تبدیل کنم. چند دوره علوم کامپیوتر را در Code.org با موفقیت گذرانده‌ام."
+            data-en="I enjoy programming because I can turn my ideas into real things. I have successfully completed several computer science courses on Code.org."
+          >
+            برنامه‌نویسی را دوست دارم چون می‌توانم
+            ایده‌هایم را به چیزهای واقعی تبدیل کنم.
+          </p>
+
+        </div>
+
+
+        <div
+          class="certificate-grid"
+          style="margin-top:20px;"
+        >
+
+
+          <div class="certificate">
+
+            <img
+              src="assets/certificate-1.jpg"
+              alt="Code.org Course A Certificate"
+            >
+
+            <h3>
+              Course A
+            </h3>
+
+            <p>
+              Code.org · 2023
+            </p>
+
+          </div>
+
+
+
+          <div class="certificate">
+
+            <img
+              src="assets/certificate-2.jpg"
+              alt="Code.org Course B Certificate"
+            >
+
+            <h3>
+              Course B
+            </h3>
+
+            <p>
+              Code.org · 2023
+            </p>
+
+          </div>
+
+
+
+          <div class="certificate">
+
+            <img
+              src="assets/certificate-3.jpg"
+              alt="Code.org Course C Certificate"
+            >
+
+            <h3>
+              Course C
+            </h3>
+
+            <p>
+              Code.org · 2023
+            </p>
+
+          </div>
+
+
+
+          <div class="certificate">
+
+            <img
+              src="assets/certificate-4.jpg"
+              alt="Code.org Course D Certificate"
+            >
+
+            <h3>
+              Course D
+            </h3>
+
+            <p>
+              Code.org · 2024
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ROBOTICS
+         ========================= -->
+
+    <section
+      class="section section-soft"
+      id="robotics"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            ROBOTICS
+          </div>
+
+          <h2
+            data-fa="🤖 رباتیک"
+            data-en="🤖 Robotics"
+          >
+            🤖 رباتیک
+          </h2>
+
+        </div>
+
+
+        <div class="panel">
+
+          <h3
+            data-fa="🏆 مقام چهارم رباتیک کشوری"
+            data-en="🏆 4th Place in National Robotics"
+          >
+            🏆 مقام چهارم رباتیک کشوری
+          </h3>
+
+
+          <p
+            data-fa="یکی از دستاوردهای مهم من کسب مقام چهارم در مسابقات رباتیک کشوری است."
+            data-en="One of my achievements is winning fourth place in a national robotics competition."
+          >
+            یکی از دستاوردهای مهم من کسب مقام چهارم در
+            مسابقات رباتیک کشوری است.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SPORTS
+         ========================= -->
+
+    <section
+      class="section"
+      id="sports"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2
+            data-fa="🏃🏻‍♀️ ورزش"
+            data-en="🏃🏻‍♀️ Sports & Gym"
+          >
+            🏃🏻‍♀️ ورزش
+          </h2>
+
+        </div>
+
+
+        <div class="panel">
+
+          <h3>
+            Body Flex
+          </h3>
+
+          <p
+            data-fa="من بادی فلکس انجام می‌دهم و در باشگاه کارن تمرین می‌کنم."
+            data-en="I do Body Flex at Karen Gym."
+          >
+            من بادی فلکس انجام می‌دهم و در باشگاه کارن
+            تمرین می‌کنم.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ENGLISH STUDY
+         ========================= -->
+
+    <section
+      class="section section-soft"
+      id="english"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2
+            data-fa="🇬🇧 زبان انگلیسی"
+            data-en="🇬🇧 English Learning"
+          >
+            🇬🇧 زبان انگلیسی
+          </h2>
+
+        </div>
+
+
+        <div class="detail-grid">
+
+          <div class="panel">
+
+            <h3>
+              Got It 3
+            </h3>
+
+            <p
+              data-fa="کتابی که با آن زبان انگلیسی می‌خوانم Got It 3 است."
+              data-en="The English book I study with is Got It 3."
+            >
+              کتابی که با آن زبان انگلیسی می‌خوانم
+              Got It 3 است.
+            </p>
+
+          </div>
+
+
+          <aside class="panel">
+
+            <p
+              data-fa="📜 مدارک و کارنامه‌های زبان بعداً اینجا اضافه می‌شوند."
+              data-en="📜 My English certificates and report cards will be added here later."
+            >
+              📜 مدارک و کارنامه‌های زبان بعداً اینجا
+              اضافه می‌شوند.
+            </p>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ART
+         ========================= -->
+
+    <section
+      class="section"
+      id="art"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2
+            data-fa="🎨 نقاشی"
+            data-en="🎨 Art"
+          >
+            🎨 نقاشی
+          </h2>
+
+        </div>
+
+
+        <div class="panel">
+
+          <p
+            data-fa="نقاشی‌های مورد علاقه من بعداً در این گالری قرار می‌گیرند."
+            data-en="My favorite drawings will be added to this gallery later."
+          >
+            نقاشی‌های مورد علاقه من بعداً در این گالری
+            قرار می‌گیرند.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         BOOKS
+         ========================= -->
+
+    <section
+      class="section section-soft"
+      id="books"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2
+            data-fa="📚 کتاب‌های مورد علاقه"
+            data-en="📚 Favorite Books"
+          >
+            📚 کتاب‌های مورد علاقه
+          </h2>
+
+        </div>
+
+
+        <div class="item-list">
+
+
+          <div class="item">
+
+            <h3
+              data-fa="جنگی که نجاتم داد"
+              data-en="The War That Saved My Life"
+            >
+              جنگی که نجاتم داد
+            </h3>
+
+            <p>
+              Kimberly Brubaker Bradley · 2015
+            </p>
+
+            <a
+              class="search-link bilingual-search"
+              data-fa-query="جنگی که نجاتم داد کتاب نسخه اصلی"
+              data-en-query="The War That Saved My Life original book"
+              target="_blank"
+            >
+              🔎
+              <span
+                data-fa="جست‌وجوی نسخه اصلی"
+                data-en="Search Original Edition"
+              >
+                جست‌وجوی نسخه اصلی
+              </span>
+            </a>
+
+          </div>
+
+
+
+          <div class="item">
+
+            <h3
+              data-fa="پسرک، موش کور، روباه و اسب"
+              data-en="The Boy, the Mole, the Fox and the Horse"
+            >
+              پسرک، موش کور، روباه و اسب
+            </h3>
+
+            <p>
+              Charlie Mackesy · 2019
+            </p>
+
+            <a
+              class="search-link bilingual-search"
+              data-fa-query="پسرک موش کور روباه و اسب نسخه اصلی"
+              data-en-query="The Boy the Mole the Fox and the Horse original book"
+              target="_blank"
+            >
+              🔎
+              <span
+                data-fa="جست‌وجوی نسخه اصلی"
+                data-en="Search Original Edition"
+              >
+                جست‌وجوی نسخه اصلی
+              </span>
+            </a>
+
+          </div>
+
+
+
+          <div class="item">
+
+            <h3
+              data-fa="مجموعه هری پاتر"
+              data-en="Harry Potter Collection"
+            >
+              مجموعه هری پاتر
+            </h3>
+
+            <p>
+              J. K. Rowling
+            </p>
+
+            <a
+              class="search-link bilingual-search"
+              data-fa-query="کتاب های هری پاتر نسخه اصلی"
+              data-en-query="Harry Potter original book collection"
+              target="_blank"
+            >
+              🔎
+              <span
+                data-fa="جست‌وجوی نسخه اصلی"
+                data-en="Search Original Editions"
+              >
+                جست‌وجوی نسخه اصلی
+              </span>
+            </a>
+
+          </div>
+
+
+
+          <div class="item">
+
+            <h3
+              data-fa="جعبه خاطرات"
+              data-en="The Memory Box"
+            >
+              جعبه خاطرات
+            </h3>
+
+            <p>
+              Joanna Rowland · 2017
+            </p>
+
+            <a
+              class="search-link bilingual-search"
+              data-fa-query="جعبه خاطرات جوآنا رولاند کتاب"
+              data-en-query="The Memory Box Joanna Rowland original book"
+              target="_blank"
+            >
+              🔎
+              <span
+                data-fa="جست‌وجوی نسخه اصلی"
+                data-en="Search Original Edition"
+              >
+                جست‌وجوی نسخه اصلی
+              </span>
+            </a>
+
+          </div>
+
+
+
+          <div class="item">
+
+            <h3
+              data-fa="ماجراهای ریگو رزا"
+              data-en="Rigo Rosa Adventures"
+            >
+              ماجراهای ریگو رزا
+            </h3>
+
+            <p
+              data-fa="جزئیات نسخه دقیق بعداً اضافه می‌شود."
+              data-en="Exact edition details will be added later."
+            >
+              جزئیات نسخه دقیق بعداً اضافه می‌شود.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MOVIES
+         ========================= -->
+
+    <section
+      class="section"
+      id="movies"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2
+            data-fa="🎬 فیلم و سریال"
+            data-en="🎬 Movies & Series"
+          >
+            🎬 فیلم و سریال
+          </h2>
+
+        </div>
+
+
+        <div class="item-list">
+
+
+          <div class="item">
+
+            <h3
+              data-fa="ساختمان پزشکان"
+              data-en="Sakhteman-e Pezeshkan"
+            >
+              ساختمان پزشکان
+            </h3>
+
+            <p>
+              2011 · Soroush Sehat · Iran
+            </p>
+
+            <a
+              class="search-link bilingual-search"
+              data-fa-query="ساختمان پزشکان سروش صحت"
+              data-en-query="Sakhteman Pezeshkan Soroush Sehat series"
+              target="_blank"
+            >
+              🔎
+              <span
+                data-fa="جست‌وجو"
+                data-en="Search"
+              >
+                جست‌وجو
+              </span>
+            </a>
+
+          </div>
+
+
+
+          <div class="item">
+
+            <h3>
+              Ponyo
+            </h3>
+
+            <p>
+              2008 · Hayao Miyazaki · Japan
+            </p>
+
+            <a
+              class="search-link bilingual-search"
+              data-fa-query="پونیو هایائو میازاکی نسخه اصلی"
+              data-en-query="Ponyo Hayao Miyazaki official"
+              target="_blank"
+            >
+              🔎
+              <span
+                data-fa="جست‌وجو"
+                data-en="Search"
+              >
+                جست‌وجو
+              </span>
+            </a>
+
+          </div>
+
+
+
+          <div class="item">
+
+            <h3>
+              Aladdin
+            </h3>
+
+            <p>
+              1992 · John Musker & Ron Clements
+            </p>
+
+          </div>
+
+
+
+          <div class="item">
+
+            <h3
+              data-fa="هری پاتر و سنگ جادو"
+              data-en="Harry Potter and the Philosopher's Stone"
+            >
+              هری پاتر و سنگ جادو
+            </h3>
+
+            <p>
+              2001 · Chris Columbus
+            </p>
+
+          </div>
+
+
+
+          <div class="item">
+
+            <h3>
+              Stranger Things
+            </h3>
+
+            <p>
+              2016 · The Duffer Brothers
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MUSIC
+         ========================= -->
+
+    <section
+      class="section section-soft"
+      id="music"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2
+            data-fa="🎵 موسیقی"
+            data-en="🎵 Music"
+          >
+            🎵 موسیقی
+          </h2>
+
+        </div>
+
+
+        <div class="grid">
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              🎧
+            </div>
+
+            <h3
+              data-fa="خونه ما"
+              data-en="Khooneye Ma"
+            >
+              خونه ما
+            </h3>
+
+            <p
+              data-fa="کوروش"
+              data-en="Kourosh"
+            >
+              کوروش
+            </p>
+
+            <a
+              class="search-link bilingual-search"
+              data-fa-query="خونه ما کوروش"
+              data-en-query="Khooneye Ma Kourosh original song"
+              target="_blank"
+            >
+              🔎
+              <span
+                data-fa="جست‌وجوی آهنگ"
+                data-en="Search Song"
+              >
+                جست‌وجوی آهنگ
+              </span>
+            </a>
+
+          </div>
+
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              🎧
+            </div>
+
+            <h3
+              data-fa="شب زده"
+              data-en="Shab Zadeh"
+            >
+              شب زده
+            </h3>
+
+            <p
+              data-fa="ابی"
+              data-en="Ebi"
+            >
+              ابی
+            </p>
+
+            <a
+              class="search-link bilingual-search"
+              data-fa-query="شب زده ابی"
+              data-en-query="Shab Zadeh Ebi original song"
+              target="_blank"
+            >
+              🔎
+              <span
+                data-fa="جست‌وجوی آهنگ"
+                data-en="Search Song"
+              >
+                جست‌وجوی آهنگ
+              </span>
+            </a>
+
+          </div>
+
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              🎧
+            </div>
+
+            <h3
+              data-fa="ترسیدم ازت"
+              data-en="Tarsidam Azat"
+            >
+              ترسیدم ازت
+            </h3>
+
+            <p
+              data-fa="ددان"
+              data-en="Dadan"
+            >
+              ددان
+            </p>
+
+          </div>
+
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              🎧
+            </div>
+
+            <h3
+              data-fa="لاله را دیدن"
+              data-en="Laleh Ra Didan"
+            >
+              لاله را دیدن
+            </h3>
+
+            <p
+              data-fa="شروین"
+              data-en="Shervin"
+            >
+              شروین
+            </p>
+
+          </div>
+
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              🎧
+            </div>
+
+            <h3>
+              Meet You at Graveyard
+            </h3>
+
+            <p>
+              Cliff
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         BOARD GAMES
+         ========================= -->
+
+    <section
+      class="section"
+      id="games"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2
+            data-fa="🧠 بازی‌های فکری"
+            data-en="🧠 Board Games"
+          >
+            🧠 بازی‌های فکری
+          </h2>
+
+        </div>
+
+
+        <div class="grid">
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              💎
+            </div>
+
+            <h3>
+              Splendor
+            </h3>
+
+            <p
+              data-fa="یک بازی استراتژیک درباره جمع‌آوری جواهرات و مدیریت منابع."
+              data-en="A strategy game about collecting gems and managing resources."
+            >
+              یک بازی استراتژیک درباره جمع‌آوری
+              جواهرات و مدیریت منابع.
+            </p>
+
+          </div>
+
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              🟦
+            </div>
+
+            <h3>
+              Azul
+            </h3>
+
+            <p
+              data-fa="بازی انتخاب کاشی، ساخت الگو و امتیازگیری."
+              data-en="A tile-drafting game about patterns, planning and scoring."
+            >
+              بازی انتخاب کاشی، ساخت الگو و
+              امتیازگیری.
+            </p>
+
+          </div>
+
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              🧩
+            </div>
+
+            <h3
+              data-fa="پاستور"
+              data-en="Pastor"
+            >
+              پاستور
+            </h3>
+
+            <p
+              data-fa="یکی از بازی‌های فکری مورد علاقه من."
+              data-en="One of my favorite board games."
+            >
+              یکی از بازی‌های فکری مورد علاقه من.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         GOALS
+         ========================= -->
+
+    <section
+      class="section section-soft"
+      id="goals"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2
+            data-fa="🎯 هدف‌های من"
+            data-en="🎯 My Goals"
+          >
+            🎯 هدف‌های من
+          </h2>
+
+        </div>
+
+
+        <div class="grid">
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              ✈️
+            </div>
+
+            <h3
+              data-fa="مهاجرت"
+              data-en="Migration"
+            >
+              مهاجرت
+            </h3>
+
+            <p
+              data-fa="دوست دارم در آینده یک محیط تازه را تجربه کنم و مسیر خودم را بسازم."
+              data-en="I would like to experience a new environment and build my own path in the future."
+            >
+              دوست دارم در آینده یک محیط تازه را
+              تجربه کنم و مسیر خودم را بسازم.
+            </p>
+
+          </div>
+
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              🚀
+            </div>
+
+            <h3
+              data-fa="مهندس ناسا شدن"
+              data-en="Become a NASA Engineer"
+            >
+              مهندس ناسا شدن
+            </h3>
+
+            <p
+              data-fa="می‌خواهم وارد دنیای مهندسی و فضا شوم و مهارت‌های لازم را برای این رویا بسازم."
+              data-en="I want to enter the world of engineering and space and build the skills I need for this dream."
+            >
+              می‌خواهم وارد دنیای مهندسی و فضا شوم.
+            </p>
+
+          </div>
+
+
+
+          <div class="card">
+
+            <div class="card-icon">
+              🌟
+            </div>
+
+            <h3
+              data-fa="شناخته شدن"
+              data-en="Be Recognized"
+            >
+              شناخته شدن
+            </h3>
+
+            <p
+              data-fa="دوست دارم به خاطر چیزهایی که یاد می‌گیرم، می‌سازم و انجام می‌دهم شناخته شوم."
+              data-en="I want to be recognized for the things I learn, create and accomplish."
+            >
+              دوست دارم به خاطر چیزهایی که می‌سازم
+              و یاد می‌گیرم شناخته شوم.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECTS
+         ========================= -->
+
+    <section
+      class="section"
+      id="projects"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2
+            data-fa="🛠 پروژه‌ها"
+            data-en="🛠 Projects"
+          >
+            🛠 پروژه‌ها
+          </h2>
+
+        </div>
+
+
+        <div class="panel">
+
+          <p
+            data-fa="پروژه‌های برنامه‌نویسی و کارهای جدید من به مرور در این بخش اضافه می‌شوند."
+            data-en="My programming projects and new work will gradually be added here."
+          >
+            پروژه‌های برنامه‌نویسی و کارهای جدید من
+            به مرور در این بخش اضافه می‌شوند.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+         ========================= -->
+
+    <section
+      class="section section-soft"
+      id="contact"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2
+            data-fa="💌 ارتباط با من"
+            data-en="💌 Contact Me"
+          >
+            💌 ارتباط با من
+          </h2>
+
+        </div>
+
+
+        <div class="panel">
+
+          <p
+            data-fa="اطلاعات تماس بعداً در این قسمت قرار می‌گیرد."
+            data-en="My contact information will be added here later."
+          >
+            اطلاعات تماس بعداً در این قسمت قرار
+            می‌گیرد.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SETTINGS
+         ========================= -->
+
+    <section
+      class="section"
+      id="settings"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <h2
+            data-fa="⚙️ تنظیمات"
+            data-en="⚙️ Settings"
+          >
+            ⚙️ تنظیمات
+          </h2>
+
+        </div>
+
+
+        <div class="settings">
+
+
+          <div class="setting">
+
+            <h3
+              data-fa="🌙 حالت نمایش"
+              data-en="🌙 Display Mode"
+            >
+              🌙 حالت نمایش
+            </h3>
+
+            <p
+              data-fa="حالت روشن یا تاریک سایت را انتخاب کن."
+              data-en="Choose light or dark mode."
+            >
+              حالت روشن یا تاریک سایت را انتخاب کن.
+            </p>
+
+            <div class="options">
+
+              <button
+                class="option"
+                data-theme="light"
+              >
+                ☀️
+                <span
+                  data-fa="روشن"
+                  data-en="Light"
+                >
+                  روشن
+                </span>
+              </button>
+
+
+              <button
+                class="option"
+                data-theme="dark"
+              >
+                🌙
+                <span
+                  data-fa="تاریک"
+                  data-en="Dark"
+                >
+                  تاریک
+                </span>
+              </button>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="setting">
+
+            <h3
+              data-fa="🌐 زبان سایت"
+              data-en="🌐 Site Language"
+            >
+              🌐 زبان سایت
+            </h3>
+
+            <div class="options">
+
+              <button
+                class="option"
+                data-language="fa"
+              >
+                🇮🇷 فارسی
+              </button>
+
+
+              <button
+                class="option"
+                data-language="en"
+              >
+                🇬🇧 English
+              </button>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="setting">
+
+            <h3
+              data-fa="🔤 اندازه نوشته"
+              data-en="🔤 Text Size"
+            >
+              🔤 اندازه نوشته
+            </h3>
+
+
+            <div class="options">
+
+              <button
+                class="option"
+                data-size="small"
+                data-fa="کوچک"
+                data-en="Small"
+              >
+                کوچک
+              </button>
+
+
+              <button
+                class="option"
+                data-size="medium"
+                data-fa="متوسط"
+                data-en="Medium"
+              >
+                متوسط
+              </button>
+
+
+              <button
+                class="option"
+                data-size="large"
+                data-fa="بزرگ"
+                data-en="Large"
+              >
+                بزرگ
+              </button>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="setting">
+
+            <h3
+              data-fa="💾 ذخیره تنظیمات"
+              data-en="💾 Save Settings"
+            >
+              💾 ذخیره تنظیمات
+            </h3>
+
+
+            <button
+              class="button primary"
+              id="saveSettings"
+              data-fa="ذخیره تنظیمات"
+              data-en="Save Settings"
+            >
+              ذخیره تنظیمات
+            </button>
+
+          </div>
+
+
+
+          <div class="setting">
+
+            <h3
+              data-fa="🧹 بازنشانی تنظیمات"
+              data-en="🧹 Reset Settings"
+            >
+              🧹 بازنشانی تنظیمات
+            </h3>
+
+
+            <button
+              class="reset-button"
+              id="resetSettings"
+              data-fa="بازنشانی تنظیمات"
+              data-en="Reset Settings"
+            >
+              بازنشانی تنظیمات
+            </button>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer>
+
+    <div
+      class="container footer-content"
+    >
+
+      <strong>
+        Ava Bayat
+      </strong>
+
+
+      <span
+        data-fa="رویای من، بزرگ‌تر از آسمان است. ✨"
+        data-en="My dream is bigger than the sky. ✨"
+      >
+        رویای من، بزرگ‌تر از آسمان است. ✨
+      </span>
+
+
+      <span>
+        ©
+        <span id="year"></span>
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <script>
+
+    /* =========================
+       AVA WEBSITE JAVASCRIPT
+       ========================= */
+
+
+    const htmlElement =
+      document.documentElement;
+
+
+    const languageButton =
+      document.getElementById(
+        "languageButton"
+      );
+
+
+    const themeTopButton =
+      document.getElementById(
+        "themeTopButton"
+      );
+
+
+    const menuButton =
+      document.getElementById(
+        "menuButton"
+      );
+
+
+    const navLinks =
+      document.getElementById(
+        "navLinks"
+      );
+
+
+    let settings = {
+      language: "fa",
+      theme: "light",
+      fontSize: "medium"
+    };
+
+
+
+    /* =========================
+       LOAD SETTINGS
+       ========================= */
+
+    try {
+
+      const saved =
+        JSON.parse(
+          localStorage.getItem(
+            "avaSettings"
+          )
+        );
+
+
+      if (saved) {
+
+        settings = {
+          ...settings,
+          ...saved
+        };
+
+      }
+
+    }
+
+    catch (error) {
+
+      console.log(
+        "Settings could not be loaded."
+      );
+
+    }
+
+
+
+    /* =========================
+       LANGUAGE
+       ========================= */
+
+    function applyLanguage() {
+
+      const language =
+        settings.language;
+
+
+      const isEnglish =
+        language === "en";
+
+
+      htmlElement.lang =
+        isEnglish
+          ? "en"
+          : "fa";
+
+
+      htmlElement.dir =
+        isEnglish
+          ? "ltr"
+          : "rtl";
+
+
+      document
+        .querySelectorAll(
+          "[data-fa][data-en]"
+        )
+        .forEach(
+          element => {
+
+            element.textContent =
+              isEnglish
+                ? element.dataset.en
+                : element.dataset.fa;
+
+          }
+        );
+
+
+      languageButton.textContent =
+        isEnglish
+          ? "🇮🇷 Persian"
+          : "🇬🇧 English";
+
+
+      document
+        .querySelectorAll(
+          "[data-language]"
+        )
+        .forEach(
+          button => {
+
+            button.classList.toggle(
+              "active",
+              button.dataset.language
+                === language
+            );
+
+          }
+        );
+
+
+      updateSearchLinks();
+
+    }
+
+
+
+    /* =========================
+       GOOGLE SEARCH LINKS
+       ========================= */
+
+    function updateSearchLinks() {
+
+      const language =
+        settings.language;
+
+
+      document
+        .querySelectorAll(
+          ".bilingual-search"
+        )
+        .forEach(
+          link => {
+
+            const query =
+              language === "en"
+                ? link.dataset.enQuery
+                : link.dataset.faQuery;
+
+
+            link.href =
+              "https://www.google.com/search?q="
+              + encodeURIComponent(
+                query
+              );
+
+          }
+        );
+
+    }
+
+
+
+    /* =========================
+       THEME
+       ========================= */
+
+    function applyTheme() {
+
+      const dark =
+        settings.theme === "dark";
+
+
+      htmlElement.classList.toggle(
+        "dark",
+        dark
+      );
+
+
+      themeTopButton.textContent =
+        dark
+          ? "☀️"
+          : "🌙";
+
+
+      document
+        .querySelectorAll(
+          "[data-theme]"
+        )
+        .forEach(
+          button => {
+
+            button.classList.toggle(
+              "active",
+              button.dataset.theme
+                === settings.theme
+            );
+
+          }
+        );
+
+    }
+
+
+
+    /* =========================
+       FONT SIZE
+       ========================= */
+
+    function applyFontSize() {
+
+      let size =
+        "16px";
+
+
+      if (
+        settings.fontSize
+        === "small"
+      ) {
+
+        size =
+          "14px";
+
+      }
+
+
+      if (
+        settings.fontSize
+        === "large"
+      ) {
+
+        size =
+          "18px";
+
+      }
+
+
+      htmlElement.style.fontSize =
+        size;
+
+
+      document
+        .querySelectorAll(
+          "[data-size]"
+        )
+        .forEach(
+          button => {
+
+            button.classList.toggle(
+              "active",
+              button.dataset.size
+                === settings.fontSize
+            );
+
+          }
+        );
+
+    }
+
+
+
+    /* =========================
+       APPLY ALL SETTINGS
+       ========================= */
+
+    function applySettings() {
+
+      applyLanguage();
+
+      applyTheme();
+
+      applyFontSize();
+
+    }
+
+
+
+    /* =========================
+       TOP LANGUAGE BUTTON
+       ========================= */
+
+    languageButton.addEventListener(
+      "click",
+      () => {
+
+        settings.language =
+          settings.language === "fa"
+            ? "en"
+            : "fa";
+
+
+        localStorage.setItem(
+          "avaSettings",
+          JSON.stringify(
+            settings
+          )
+        );
+
+
+        applySettings();
+
+      }
+    );
+
+
+
+    /* =========================
+       SETTINGS LANGUAGE BUTTONS
+       ========================= */
+
+    document
+      .querySelectorAll(
+        "[data-language]"
+      )
+      .forEach(
+        button => {
+
+          button.addEventListener(
+            "click",
+            () => {
+
+              settings.language =
+                button.dataset.language;
+
+
+              localStorage.setItem(
+                "avaSettings",
+                JSON.stringify(
+                  settings
+                )
+              );
+
+
+              applySettings();
+
+            }
+          );
+
+        }
+      );
+
+
+
+    /* =========================
+       THEME BUTTONS
+       ========================= */
+
+    document
+      .querySelectorAll(
+        "[data-theme]"
+      )
+      .forEach(
+        button => {
+
+          button.addEventListener(
+            "click",
+            () => {
+
+              settings.theme =
+                button.dataset.theme;
+
+
+              localStorage.setItem(
+                "avaSettings",
+                JSON.stringify(
+                  settings
+                )
+              );
+
+
+              applySettings();
+
+            }
+          );
+
+        }
+      );
+
+
+
+    /* =========================
+       TOP DARK BUTTON
+       ========================= */
+
+    themeTopButton.addEventListener(
+      "click",
+      () => {
+
+        settings.theme =
+          settings.theme === "dark"
+            ? "light"
+            : "dark";
+
+
+        localStorage.setItem(
+          "avaSettings",
+          JSON.stringify(
+            settings
+          )
+        );
+
+
+        applySettings();
+
+      }
+    );
+
+
+
+    /* =========================
+       FONT SIZE BUTTONS
+       ========================= */
+
+    document
+      .querySelectorAll(
+        "[data-size]"
+      )
+      .forEach(
+        button => {
+
+          button.addEventListener(
+            "click",
+            () => {
+
+              settings.fontSize =
+                button.dataset.size;
+
+
+              localStorage.setItem(
+                "avaSettings",
+                JSON.stringify(
+                  settings
+                )
+              );
+
+
+              applySettings();
+
+            }
+          );
+
+        }
+      );
+
+
+
+    /* =========================
+       SAVE
+       ========================= */
+
+    document
+      .getElementById(
+        "saveSettings"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          localStorage.setItem(
+            "avaSettings",
+            JSON.stringify(
+              settings
+            )
+          );
+
+
+          if (
+            settings.language
+            === "en"
+          ) {
+
+            alert(
+              "Settings saved successfully 🩵"
+            );
+
+          }
+
+          else {
+
+            alert(
+              "تنظیمات با موفقیت ذخیره شد 🩵"
+            );
+
+          }
+
+        }
+      );
+
+
+
+    /* =========================
+       RESET
+       ========================= */
+
+    document
+      .getElementById(
+        "resetSettings"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          const message =
+            settings.language
+              === "en"
+              ? "Are you sure you want to reset all settings?"
+              : "آیا از بازنشانی همه تنظیمات اطمینان دارید؟";
+
+
+          const confirmed =
+            confirm(
+              message
+            );
+
+
+          if (
+            !confirmed
+          ) {
+
+            return;
+
+          }
+
+
+          localStorage.removeItem(
+            "avaSettings"
+          );
+
+
+          settings = {
+            language: "fa",
+            theme: "light",
+            fontSize: "medium"
+          };
+
+
+          applySettings();
+
+        }
+      );
+
+
+
+    /* =========================
+       MOBILE MENU
+       ========================= */
+
+    menuButton.addEventListener(
+      "click",
+      () => {
+
+        navLinks.classList.toggle(
+          "open"
+        );
+
+      }
+    );
+
+
+    navLinks
+      .querySelectorAll(
+        "a"
+      )
+      .forEach(
+        link => {
+
+          link.addEventListener(
+            "click",
+            () => {
+
+              navLinks.classList.remove(
+                "open"
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+
+    /* =========================
+       YEAR
+       ========================= */
+
+    document.getElementById(
+      "year"
+    ).textContent =
+      new Date().getFullYear();
+
+
+
+    /* =========================
+       START WEBSITE
+       ========================= */
+
+    applySettings();
+
+  </script>
+
 
 </body>
 </html>
