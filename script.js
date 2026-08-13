@@ -1,13 +1,213 @@
 
 (function(){
   const key="avaSettings";
+  const isEN=document.documentElement.lang==="en" || location.pathname.includes("/en/");
+  const SEARCH_DATA=[{"title":"درباره آوا","meta":"درباره آوا | آوا بیات","text":"درباره آوا | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← درباره آوا من کی هستم؟ من آوا بیات، دانش‌آموز پایه هفتم هستم. به برنامه‌نویسی، رباتیک، کتاب، زبان انگلیسی، نقاشی، فیلم، موسیقی، بازی‌های فکری و ورزش علاقه دارم. دوست دارم چیزهای تازه یاد بگیرم و قدم‌به‌قدم برای آینده‌ام مهارت بسازم. علاقه‌های من 🎓 دانش‌آموز 💻 برنامه‌نویسی 🤖 رباتیک 📚 کتاب 🇬🇧 انگلیسی 🎨 نقاشی 🎬 فیلم 🧠 بازی فکری آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"about.html"},{"title":"علاءالدین","meta":"علاءالدین | آوا بیات","text":"علاءالدین | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← علاءالدین 🎬 علاءالدین معرفی داستان علاءالدین، چراغ جادو و ماجرایی که زندگی او را تغییر می‌دهد. ▶️ جست‌وجوی نسخه اصلی مشخصات عنوان: علاءالدین سال ساخت: ۱۹۹۲ کارگردان: جان ماسکر و ران کلمنتس کشور: ایالات متحده نوع: انیمیشن آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"aladdin.html"},{"title":"نقاشی","meta":"نقاشی | آوا بیات","text":"نقاشی | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← نقاشی 🎨 گالری نقاشی من 🎨 نقاشی‌های مورد علاقه من بعداً اینجا اضافه می‌شوند. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"art.html"},{"title":"Azul","meta":"Azul | آوا بیات","text":"Azul | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← Azul 🟦 Azul درباره بازی یک بازی انتخاب کاشی و ساخت الگو که به برنامه‌ریزی دقیق نیاز دارد. 🔎 جست‌وجوی نسخه اصلی مشخصات نام: Azul نوع: بازی فکری آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"azul.html"},{"title":"پسرک، موش کور، روباه و اسب","meta":"پسرک، موش کور، روباه و اسب | آوا بیات","text":"پسرک، موش کور، روباه و اسب | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← پسرک، موش کور، روباه و اسب 📚 پسرک، موش کور، روباه و اسب معرفی کتاب کتابی تصویری درباره دوستی، مهربانی، امید و شجاعت. 📖 جست‌وجوی نسخه اصلی مشخصات عنوان: پسرک، موش کور، روباه و اسب نویسنده: چارلی مکسی کشور: بریتانیا سال انتشار: ۲۰۱۹ آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"book-boy.html"},{"title":"جنگی که نجاتم داد","meta":"جنگی که نجاتم داد | آوا بیات","text":"جنگی که نجاتم داد | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← جنگی که نجاتم داد 📚 جنگی که نجاتم داد معرفی کتاب رمانی درباره آدا، دختری که در دوران جنگ جهانی دوم با شجاعت مسیر زندگی تازه‌ای را تجربه می‌کند. 📖 جست‌وجوی نسخه اصلی مشخصات عنوان: جنگی که نجاتم داد نویسنده: کیمبرلی بروبیکر بردلی کشور: ایالات متحده سال انتشار: ۲۰۱۵ آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"book-war.html"},{"title":"کتاب‌ها","meta":"کتاب‌ها | آوا بیات","text":"کتاب‌ها | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← کتاب‌ها 📖 جنگی که نجاتم داد کیمبرلی بروبیکر بردلی 🦊 پسرک، موش کور، روباه و اسب چارلی مکسی ⚡ مجموعه هری پاتر جی. کی. رولینگ 🎁 جعبه خاطرات جوآنا رولاند 📚 ماجراهای ریگو رزا جزئیات نسخه دقیق بعداً تکمیل می‌شود آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"books.html"},{"title":"ساختمان پزشکان","meta":"ساختمان پزشکان | آوا بیات","text":"ساختمان پزشکان | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← ساختمان پزشکان 🎬 ساختمان پزشکان معرفی یک مجموعه کمدی درباره نیما افشار و موقعیت‌های طنز زندگی کاری و خانوادگی او. ▶️ جست‌وجوی نسخه اصلی مشخصات عنوان: ساختمان پزشکان سال ساخت: ۱۳۹۰ کارگردان: سروش صحت کشور: ایران نوع: سریال آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"building-doctors.html"},{"title":"ارتباط با من","meta":"ارتباط با من | آوا بیات","text":"ارتباط با من | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← ارتباط با من 💌 اطلاعات تماس بعداً اینجا اضافه می‌شود. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"contact.html"},{"title":"زبان انگلیسی","meta":"زبان انگلیسی | آوا بیات","text":"زبان انگلیسی | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← زبان انگلیسی 🇬🇧 مسیر زبان انگلیسی من کتاب زبان من Got It 3 است. 📜 مدارک و کارنامه‌های زبان من بعداً اینجا اضافه می‌شوند. مشخصات کتاب: Got It 3 آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"english.html"},{"title":"بازی‌های فکری","meta":"بازی‌های فکری | آوا بیات","text":"بازی‌های فکری | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← بازی‌های فکری 💎 Splendor صفحه بازی 🟦 Azul صفحه بازی 🧩 پاستور صفحه بازی آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"games.html"},{"title":"شناخته شدن","meta":"شناخته شدن | آوا بیات","text":"شناخته شدن | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← شناخته شدن 🌟 شناخته شدن دوست دارم به خاطر چیزهایی که می‌سازم، یاد می‌گیرم و انجام می‌دهم شناخته شوم. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"goal-known.html"},{"title":"مهاجرت","meta":"مهاجرت | آوا بیات","text":"مهاجرت | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← مهاجرت ✈️ مهاجرت دوست دارم در آینده محیط تازه‌ای را تجربه کنم، بیشتر یاد بگیرم و مسیر خودم را بسازم. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"goal-migration.html"},{"title":"مهندس ناسا شدن","meta":"مهندس ناسا شدن | آوا بیات","text":"مهندس ناسا شدن | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← مهندس ناسا شدن 🚀 مهندس ناسا شدن یکی از بزرگ‌ترین رویاهای من ورود به دنیای مهندسی و فضا و ساختن مهارت‌های لازم برای رسیدن به آن است. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"goal-nasa.html"},{"title":"هدف‌های من","meta":"هدف‌های من | آوا بیات","text":"هدف‌های من | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← هدف‌های من ✈️ مهاجرت یکی از هدف‌های آینده من. 🚀 مهندس ناسا شدن رویای بزرگ من در مهندسی و فضا. 🌟 شناخته شدن ساختن چیزهایی که ارزش دیده شدن داشته باشند. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"goals.html"},{"title":"مجموعه هری پاتر","meta":"مجموعه هری پاتر | آوا بیات","text":"مجموعه هری پاتر | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← مجموعه هری پاتر ⚡ Harry Potter هفت کتاب مجموعه هری پاتر و سنگ جادو — ۱۹۹۷ هری پاتر و تالار اسرار — ۱۹۹۸ هری پاتر و زندانی آزکابان — ۱۹۹۹ هری پاتر و جام آتش — ۲۰۰۰ هری پاتر و محفل ققنوس — ۲۰۰۳ هری پاتر و شاهزاده دورگه — ۲۰۰۵ هری پاتر و یادگاران مرگ — ۲۰۰۷ 📖 جست‌وجوی نسخه اصلی مشخصات نویسنده: جی. کی. رولینگ کشور: بریتانیا اولین انتشار: ۱۹۹۷ آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"harry-potter-books.html"},{"title":"هری پاتر و سنگ جادو","meta":"هری پاتر و سنگ جادو | آوا بیات","text":"هری پاتر و سنگ جادو | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← هری پاتر و سنگ جادو 🎬 هری پاتر و سنگ جادو معرفی هری می‌فهمد جادوگر است و نخستین سالش را در هاگوارتز آغاز می‌کند. ▶️ جست‌وجوی نسخه اصلی مشخصات عنوان: هری پاتر و سنگ جادو سال ساخت: ۲۰۰۱ کارگردان: کریس کلمبوس کشور: بریتانیا / ایالات متحده نوع: فیلم آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"harry-potter-movie.html"},{"title":"رویای من، بزرگ‌تر از آسمان است. ✨","meta":"آوا بیات | سایت شخصی","text":"آوا بیات | سایت شخصی آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English WELCOME TO AVA'S UNIVERSE ✨ رویای من، بزرگ‌تر از آسمان است. ✨ جایی برای رویاها، یادگیری، علاقه‌ها و مسیر آینده من. درباره آوا پروژه‌ها دنیای آوا دنیای من را ببین هر بخش صفحه مخصوص خودش را دارد. 👩🏻‍🚀 درباره آوا من کی هستم و چه چیزهایی دوست دارم. 🎓 دانش‌آموز پایه هفتم و مسیر یادگیری من. 💻 برنامه‌نویسی دوره‌ها، مهارت‌ها و مدارک من. 🤖 رباتیک مقام چهارم رباتیک کشوری. 📚 کتاب‌ها کتاب‌های مورد علاقه‌ام و مشخصات آن‌ها. 🏃🏻‍♀️ ورزش بادی فلکس در باشگاه کارن. 🇬🇧 زبان انگلیسی Got It 3 و مدارک زبان من. 🎨 نقاشی نقاشی‌های مورد علاقه من. 🎬 فیلم و سریال فیلم‌ها، انیمه‌ها و سریال‌های مورد علاقه‌ام. 🎵 موسیقی آهنگ‌های مورد علاقه من. 🧠 بازی‌های فکری بازی‌های فکری مورد علاقه من. 🎯 هدف‌های من سه رویای بزرگ برای آینده. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"index.html"},{"title":"جعبه خاطرات","meta":"جعبه خاطرات | آوا بیات","text":"جعبه خاطرات | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← جعبه خاطرات 📚 جعبه خاطرات معرفی کتاب داستانی تصویری درباره خاطره‌ها و نگه داشتن یاد کسانی که دوستشان داریم. 📖 جست‌وجوی نسخه اصلی مشخصات عنوان: جعبه خاطرات نویسنده: جوآنا رولاند کشور: ایالات متحده سال انتشار: ۲۰۱۷ آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"memory-box.html"},{"title":"فیلم و سریال","meta":"فیلم و سریال | آوا بیات","text":"فیلم و سریال | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← فیلم و سریال 🎬 ساختمان پزشکان سریال 🎬 پونیو انیمیشن 🎬 علاءالدین انیمیشن 🎬 هری پاتر و سنگ جادو فیلم 🎬 استرنجر تینگز سریال آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"movies.html"},{"title":"موسیقی","meta":"موسیقی | آوا بیات","text":"موسیقی | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← موسیقی 🎵 خونه ما کوروش · جست‌وجوی نسخه اصلی 🎵 شب زده ابی · جست‌وجوی نسخه اصلی 🎵 ترسیدم ازت ددان · جست‌وجوی نسخه اصلی 🎵 لاله را دیدن شروین · جست‌وجوی نسخه اصلی 🎵 Meet You at Graveyard Cliff · جست‌وجوی نسخه اصلی آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"music.html"},{"title":"پاستور","meta":"پاستور | آوا بیات","text":"پاستور | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← پاستور 🧩 پاستور درباره بازی یکی از بازی‌های فکری مورد علاقه من؛ جزئیات نسخه دقیق بعداً اضافه می‌شود. 🔎 جست‌وجوی نسخه اصلی مشخصات نام: پاستور نوع: بازی فکری آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"pastor.html"},{"title":"پونیو","meta":"پونیو | آوا بیات","text":"پونیو | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← پونیو 🎬 پونیو معرفی داستان ماهی کوچکی به نام پونیو که دوست دارد انسان شود و با پسری به نام سوسکه دوست می‌شود. ▶️ جست‌وجوی نسخه اصلی مشخصات عنوان: پونیو سال ساخت: ۲۰۰۸ کارگردان: هایائو میازاکی کشور: ژاپن نوع: انیمیشن آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"ponyo.html"},{"title":"برنامه‌نویسی","meta":"برنامه‌نویسی | آوا بیات","text":"برنامه‌نویسی | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← برنامه‌نویسی 💻 مسیر برنامه‌نویسی من برنامه‌نویسی یکی از علاقه‌های اصلی من است. چند دوره علوم کامپیوتر را در Code.org گذرانده‌ام و دوست دارم ایده‌ها را به پروژه‌های واقعی تبدیل کنم. 📜 تصاویر مدارک Code.org من در این بخش قرار می‌گیرند. مدارک Course A — Code.org — 2023 Course B — Code.org — 2023 Course C — Code.org — 2023 Course D — Code.org — 2024 آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"programming.html"},{"title":"پروژه‌ها","meta":"پروژه‌ها | آوا بیات","text":"پروژه‌ها | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← پروژه‌ها 💻 برنامه‌نویسی پروژه‌ها و مدارک برنامه‌نویسی من. 🤖 رباتیک دستاورد کشوری من. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"projects.html"},{"title":"ماجراهای ریگو رزا","meta":"ماجراهای ریگو رزا | آوا بیات","text":"ماجراهای ریگو رزا | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← ماجراهای ریگو رزا 📚 ماجراهای ریگو رزا معرفی کتاب این صفحه برای اضافه کردن مشخصات دقیق همان نسخه‌ای که دوست داری آماده است. 📖 جست‌وجوی نسخه اصلی مشخصات عنوان: ماجراهای ریگو رزا نویسنده: — کشور: — سال انتشار: — آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"rigo-rosa.html"},{"title":"رباتیک","meta":"رباتیک | آوا بیات","text":"رباتیک | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← رباتیک 🏆 مقام چهارم رباتیک کشوری یکی از دستاوردهای مهم من کسب مقام چهارم در مسابقات رباتیک کشوری است. 🤖 مدارک و عکس‌های مسابقه بعداً اینجا اضافه می‌شوند. دستاورد رتبه: چهارم سطح: کشوری آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"robotics.html"},{"title":"⚙️ تنظیمات","meta":"تنظیمات | آوا بیات","text":"تنظیمات | آوا بیات آوا بیات 🇬🇧 English بازگشت ← ⚙️ تنظیمات 🌙 حالت نمایش ظاهر مورد علاقه‌ات را انتخاب کن. ☀️ روشن 🌙 تاریک 🌐 زبان سایت بین نسخه فارسی و انگلیسی جابه‌جا شو. 🇮🇷 فارسی 🇬🇧 English 🔤 اندازه نوشته کوچک متوسط بزرگ 🔔 اعلان‌ها برای قابلیت‌های آینده سایت. 🔔 روشن 🔕 خاموش 💾 ذخیره تنظیمات ذخیره تنظیمات 🧹 بازنشانی تنظیمات تنظیمات نمایش و اندازه نوشته به حالت اولیه برمی‌گردند. بازنشانی تنظیمات آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨","url":"settings.html"},{"title":"Splendor","meta":"Splendor | آوا بیات","text":"Splendor | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← Splendor 💎 Splendor درباره بازی یک بازی استراتژیک درباره جمع‌آوری جواهرات، مدیریت منابع و امتیازگیری. 🔎 جست‌وجوی نسخه اصلی مشخصات نام: Splendor نوع: بازی فکری آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"splendor.html"},{"title":"ورزش","meta":"ورزش | آوا بیات","text":"ورزش | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← ورزش 🏃🏻‍♀️ بادی فلکس من بادی فلکس انجام می‌دهم و در باشگاه کارن تمرین می‌کنم. ورزش یکی از بخش‌های مهم فعالیت‌های من است. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"sports.html"},{"title":"استرنجر تینگز","meta":"استرنجر تینگز | آوا بیات","text":"استرنجر تینگز | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← استرنجر تینگز 🎬 استرنجر تینگز معرفی مجموعه‌ای علمی‌تخیلی و رازآلود درباره گروهی از دوستان و اتفاق‌های عجیب شهر هاوکینز. ▶️ جست‌وجوی نسخه اصلی مشخصات عنوان: استرنجر تینگز سال ساخت: ۲۰۱۶ کارگردان: برادران دافر کشور: ایالات متحده نوع: سریال آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"stranger-things.html"},{"title":"دانش‌آموز","meta":"دانش‌آموز | آوا بیات","text":"دانش‌آموز | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← دانش‌آموز مسیر یادگیری من من دانش‌آموز پایه هفتم هستم. در کنار مدرسه، برنامه‌نویسی و زبان انگلیسی را دنبال می‌کنم و دوست دارم مهارت حل مسئله و خلاقیت را بیشتر کنم. چه چیزهایی یاد می‌گیرم؟ درس‌های مدرسه، زبان انگلیسی، برنامه‌نویسی، پروژه‌ها و مهارت‌هایی که برای آینده‌ام لازم دارم. مشخصات پایه: هفتم علاقه‌ها: برنامه‌نویسی، کتاب، انگلیسی، هنر و ورزش آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"student.html"}];
   let s={};
   try{s=JSON.parse(localStorage.getItem(key)||"{}")}catch(e){}
-  const theme=s.theme||"light";
-  document.documentElement.classList.toggle("dark",theme==="dark");
-  document.body.classList.toggle("dark",theme==="dark");
+
+  function saveSettings(next){
+    s=Object.assign({},s,next);
+    localStorage.setItem(key,JSON.stringify(s));
+  }
+  function applyTheme(theme){
+    document.documentElement.classList.toggle("dark",theme==="dark");
+    document.body.classList.toggle("dark",theme==="dark");
+  }
+  function currentTheme(){
+    try{return (JSON.parse(localStorage.getItem(key)||"{}").theme)||"light"}catch(e){return "light"}
+  }
+
+  applyTheme(s.theme||"light");
   document.documentElement.style.fontSize=s.fontSize==="small"?"14px":s.fontSize==="large"?"18px":"16px";
+
   const m=document.getElementById("menu"), links=document.getElementById("links");
   if(m&&links)m.onclick=()=>links.classList.toggle("open");
-  const y=document.getElementById("year"); if(y)y.textContent=new Date().getFullYear();
+  const y=document.getElementById("year");
+  if(y)y.textContent=new Date().getFullYear();
+
+  function normalizeText(t){
+    return String(t||"")
+      .toLowerCase()
+      .normalize("NFKD")
+      .replace(/[\u064B-\u065F\u0670]/g,"")
+      .replace(/[يى]/g,"ی")
+      .replace(/ك/g,"ک")
+      .replace(/\s+/g," ")
+      .trim();
+  }
+
+  function getCurrentFile(){
+    const part=location.pathname.split("/").filter(Boolean).pop()||"index.html";
+    return part.includes(".")?part:"index.html";
+  }
+
+  function ensureQuickActions(){
+    const nav=document.querySelector(".nav");
+    if(!nav || nav.querySelector(".ava-quick-actions")) return;
+
+    const wrap=document.createElement("div");
+    wrap.className="ava-quick-actions";
+
+    const searchBtn=document.createElement("button");
+    searchBtn.type="button";
+    searchBtn.className="ava-icon-btn ava-search-toggle";
+    searchBtn.setAttribute("aria-label",isEN?"Search site":"جست‌وجو در سایت");
+    searchBtn.title=isEN?"Search":"جست‌وجو";
+    searchBtn.innerHTML="🔍";
+
+    const themeBtn=document.createElement("button");
+    themeBtn.type="button";
+    themeBtn.className="ava-icon-btn ava-theme-toggle";
+
+    let lang=[...nav.querySelectorAll("a")].find(a=>{
+      const t=(a.textContent||"").trim();
+      return /English|Persian|فارسی|🇬🇧|🇮🇷/.test(t);
+    });
+    if(!lang){
+      lang=document.createElement("a");
+      lang.className="btn";
+    }
+    lang.classList.add("ava-lang-toggle");
+    const file=getCurrentFile();
+    lang.href=isEN?"../"+file:"en/"+file;
+    lang.textContent=isEN?"🇮🇷 Persian":"🇬🇧 English";
+
+    function refreshThemeButton(){
+      const dark=currentTheme()==="dark";
+      themeBtn.innerHTML=dark?"☀️":"🌙";
+      themeBtn.title=isEN?(dark?"Switch to light":"Switch to dark"):(dark?"حالت روشن":"حالت تاریک");
+      themeBtn.setAttribute("aria-label",themeBtn.title);
+    }
+    refreshThemeButton();
+
+    themeBtn.addEventListener("click",()=>{
+      const next=currentTheme()==="dark"?"light":"dark";
+      const settingsButton=document.querySelector('[data-theme="'+next+'"]');
+      if(settingsButton){
+        settingsButton.click();
+      }else{
+        saveSettings({theme:next});
+        applyTheme(next);
+      }
+      refreshThemeButton();
+      document.dispatchEvent(new CustomEvent("avaThemeChanged",{detail:{theme:next}}));
+    });
+
+    wrap.append(searchBtn,themeBtn,lang);
+    nav.appendChild(wrap);
+  }
+
+  function buildSearch(){
+    if(document.getElementById("avaSearchOverlay")) return;
+    const overlay=document.createElement("div");
+    overlay.id="avaSearchOverlay";
+    overlay.className="ava-search-overlay";
+    overlay.setAttribute("aria-hidden","true");
+    overlay.innerHTML=`
+      <div class="ava-search-dialog" role="dialog" aria-modal="true" aria-label="${isEN?"Site search":"جست‌وجوی سایت"}">
+        <div class="ava-search-top">
+          <span class="ava-search-orbit">✦</span>
+          <input id="avaSearchInput" type="search" autocomplete="off"
+            placeholder="${isEN?"Search Ava's Universe...":"جست‌وجو در دنیای آوا..."}">
+          <button type="button" class="ava-search-close" aria-label="${isEN?"Close":"بستن"}">✕</button>
+        </div>
+        <div class="ava-search-hint">${isEN?"Try: robotics, Harry Potter, NASA, music":"مثلاً: رباتیک، هری پاتر، ناسا، موسیقی"}</div>
+        <div id="avaSearchResults" class="ava-search-results"></div>
+      </div>`;
+    document.body.appendChild(overlay);
+
+    const input=overlay.querySelector("#avaSearchInput");
+    const results=overlay.querySelector("#avaSearchResults");
+    const close=()=>{overlay.classList.remove("open");overlay.setAttribute("aria-hidden","true");document.body.classList.remove("ava-no-scroll");};
+    const open=()=>{
+      overlay.classList.add("open");
+      overlay.setAttribute("aria-hidden","false");
+      document.body.classList.add("ava-no-scroll");
+      setTimeout(()=>input.focus(),60);
+      render("");
+    };
+
+    function render(q){
+      const nq=normalizeText(q);
+      let found;
+      if(!nq){
+        found=SEARCH_DATA.slice(0,6);
+      }else{
+        const terms=nq.split(" ").filter(Boolean);
+        found=SEARCH_DATA.map(item=>{
+          const hay=normalizeText(item.title+" "+item.meta+" "+item.text);
+          let score=0;
+          for(const t of terms){
+            if(normalizeText(item.title).includes(t)) score+=5;
+            if(normalizeText(item.meta).includes(t)) score+=3;
+            if(hay.includes(t)) score+=1;
+          }
+          return {item,score};
+        }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).slice(0,10).map(x=>x.item);
+      }
+      if(!found.length){
+        results.innerHTML=`<div class="ava-search-empty">${isEN?"No results found 🚀":"چیزی پیدا نشد 🚀"}</div>`;
+        return;
+      }
+      results.innerHTML=found.map(item=>`
+        <a class="ava-search-result" href="${item.url}">
+          <span class="ava-result-icon">✦</span>
+          <span><strong>${escapeHTML(item.title)}</strong><small>${escapeHTML(item.meta||"")}</small></span>
+          <b>${isEN?"Open":"باز کردن"} →</b>
+        </a>`).join("");
+    }
+    function escapeHTML(v){
+      return String(v||"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[ch]));
+    }
+
+    input.addEventListener("input",e=>render(e.target.value));
+    overlay.querySelector(".ava-search-close").addEventListener("click",close);
+    overlay.addEventListener("click",e=>{if(e.target===overlay)close();});
+    document.addEventListener("keydown",e=>{
+      if(e.key==="Escape" && overlay.classList.contains("open")) close();
+      if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==="k"){
+        e.preventDefault(); open();
+      }
+      if(e.key==="/" && !/input|textarea|select/i.test(document.activeElement.tagName)){
+        e.preventDefault(); open();
+      }
+    });
+    document.querySelectorAll(".ava-search-toggle").forEach(b=>b.addEventListener("click",open));
+    window.avaOpenSearch=open;
+  }
+
+  function buildBackToTop(){
+    if(document.getElementById("avaBackTop"))return;
+    const b=document.createElement("button");
+    b.id="avaBackTop";
+    b.className="ava-back-top";
+    b.type="button";
+    b.title=isEN?"Back to top":"بازگشت به بالا";
+    b.setAttribute("aria-label",b.title);
+    b.innerHTML="↑";
+    document.body.appendChild(b);
+    const update=()=>b.classList.toggle("show",window.scrollY>420);
+    addEventListener("scroll",update,{passive:true});
+    update();
+    b.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+  }
+
+  function addSpaceDecor(){
+    if(document.querySelector(".ava-space-decor"))return;
+    const d=document.createElement("div");
+    d.className="ava-space-decor";
+    d.setAttribute("aria-hidden","true");
+    d.innerHTML='<i></i><i></i><i></i>';
+    document.body.appendChild(d);
+  }
+
+  function boot(){
+    ensureQuickActions();
+    buildSearch();
+    buildBackToTop();
+    addSpaceDecor();
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot);
+  else boot();
 })();
