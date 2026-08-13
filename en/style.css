@@ -591,3 +591,348 @@ html.dark .ava-story-copy p,body.dark .ava-story-copy p{color:#afc3cf}
   .ava-story-copy,.ava-story-planet,.ava-story-orbit,.ava-story-rocket{transform:none!important}
   .ava-scroll-story{min-height:180vh}
 }
+
+
+/* Horizontal WOW Journey */
+.ava-horizontal-journey{position:relative;padding:84px 0 92px;overflow:hidden;background:radial-gradient(circle at 12% 20%,rgba(89,220,231,.17),transparent 28rem),radial-gradient(circle at 90% 25%,rgba(136,111,245,.18),transparent 30rem),linear-gradient(180deg,#f5fdff,#eef5ff 48%,#f8fbff);border-block:1px solid rgba(102,196,211,.18)}
+.ava-horizontal-journey:before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(70,155,178,.18) 1px,transparent 1.5px),radial-gradient(circle,rgba(137,112,223,.13) 1px,transparent 1.5px);background-size:48px 48px,88px 88px;background-position:0 0,24px 31px;opacity:.6}
+.ava-hj-head{position:relative;z-index:2;width:min(1120px,calc(100% - 30px));margin:0 auto 30px;text-align:center}
+.ava-hj-head span{color:var(--primary-dark);font-weight:950;letter-spacing:2px;font-size:12px}
+.ava-hj-head h2{margin:7px 0;font-size:clamp(34px,6vw,62px);line-height:1.1}
+.ava-hj-head p{margin:0;color:var(--muted)}
+.ava-hj-shell{position:relative;z-index:2;width:min(1180px,100%);margin:auto}
+.ava-hj-track{display:flex;gap:18px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:18px max(7vw,28px) 30px;cursor:grab;user-select:none;touch-action:pan-y pinch-zoom;-webkit-overflow-scrolling:touch}
+.ava-hj-track::-webkit-scrollbar{display:none}.ava-hj-track.dragging{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+.ava-hj-slide{position:relative;flex:0 0 min(76vw,760px);min-height:430px;scroll-snap-align:center;border-radius:34px;padding:42px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;color:#f4fbff;border:1px solid rgba(172,233,239,.25);box-shadow:0 30px 70px rgba(16,46,77,.19),0 0 40px rgba(86,217,227,.08);transform:scale(.94);opacity:.62;transition:transform .45s cubic-bezier(.2,.75,.25,1),opacity .45s ease,box-shadow .45s ease}
+.ava-hj-slide.active{transform:scale(1);opacity:1;box-shadow:0 36px 90px rgba(14,48,84,.28),0 0 70px rgba(96,223,232,.13)}
+.ava-hj-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(4,10,22,.72),transparent 56%);pointer-events:none}
+.ava-hj-slide>*{position:relative;z-index:2}
+.ava-hj-slide.earth{background:radial-gradient(circle at 18% 20%,rgba(83,225,231,.34),transparent 20rem),linear-gradient(135deg,#1d9eae,#174b76 58%,#101a3c)}
+.ava-hj-slide.learn{background:radial-gradient(circle at 85% 18%,rgba(172,148,255,.35),transparent 18rem),linear-gradient(135deg,#3a66b3,#493e8c 58%,#141c3b)}
+.ava-hj-slide.robot{background:radial-gradient(circle at 18% 20%,rgba(87,231,215,.24),transparent 18rem),linear-gradient(135deg,#113d58,#275a73 50%,#18243d)}
+.ava-hj-slide.dream{background:radial-gradient(circle at 80% 22%,rgba(255,178,221,.26),transparent 20rem),linear-gradient(135deg,#6a4f9e,#394a93 52%,#171d42)}
+.ava-hj-slide.nasa{background:radial-gradient(circle at 75% 18%,rgba(114,229,238,.30),transparent 18rem),radial-gradient(circle at 15% 25%,rgba(153,126,255,.28),transparent 20rem),linear-gradient(135deg,#071322,#0b203c 48%,#0b0d24)}
+.ava-hj-slide>b{position:absolute;top:20px;right:24px;font-size:clamp(54px,10vw,100px);line-height:1;font-weight:950;color:rgba(255,255,255,.08)}
+html[dir="rtl"] .ava-hj-slide>b{right:auto;left:24px}
+.ava-hj-visual{position:absolute;right:34px;top:48px;font-size:clamp(88px,15vw,160px);filter:drop-shadow(0 18px 34px rgba(0,0,0,.18));transform:rotate(-5deg);transition:transform .45s ease}
+html[dir="rtl"] .ava-hj-visual{right:auto;left:34px}.ava-hj-slide.active .ava-hj-visual{transform:translateY(-8px) rotate(3deg) scale(1.05)}
+.ava-hj-slide small{font-weight:900;letter-spacing:2px;color:#89edf2}.ava-hj-slide h3{font-size:clamp(29px,5vw,52px);margin:6px 0 5px;line-height:1.06}.ava-hj-slide p{max-width:580px;color:rgba(239,249,255,.80);margin:0 0 14px}.ava-hj-slide .btn{align-self:flex-start}
+.ava-hj-arrow{position:absolute;top:50%;z-index:5;width:52px;height:52px;border-radius:17px;border:1px solid rgba(115,214,224,.26);background:rgba(9,26,42,.72);color:white;font-size:34px;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(12px);box-shadow:0 12px 28px rgba(6,24,40,.22);transform:translateY(-50%);transition:.2s}
+.ava-hj-arrow:hover{transform:translateY(-50%) scale(1.08);background:rgba(20,55,76,.88)}.ava-hj-arrow.prev{left:12px}.ava-hj-arrow.next{right:12px}
+.ava-hj-dots{position:relative;z-index:3;display:flex;justify-content:center;gap:7px;margin-top:4px}.ava-hj-dots i{width:7px;height:7px;border-radius:999px;background:rgba(68,117,142,.25);transition:.25s}.ava-hj-dots i.active{width:34px;background:linear-gradient(90deg,#57d8e1,#8a78ed);box-shadow:0 0 13px rgba(87,216,225,.32)}
+html.dark .ava-horizontal-journey,body.dark .ava-horizontal-journey{background:radial-gradient(circle at 12% 20%,rgba(55,197,212,.15),transparent 28rem),radial-gradient(circle at 88% 25%,rgba(117,90,238,.19),transparent 30rem),linear-gradient(180deg,#081421,#0b1728 48%,#08111d)}
+@media(max-width:760px){.ava-horizontal-journey{padding:62px 0 70px}.ava-hj-head{margin-bottom:18px}.ava-hj-track{gap:12px;padding-inline:18px}.ava-hj-slide{flex-basis:88vw;min-height:480px;padding:30px 24px;border-radius:28px}.ava-hj-visual{font-size:110px;top:66px;right:24px}html[dir="rtl"] .ava-hj-visual{right:auto;left:24px}.ava-hj-arrow{display:none}}
+@media(prefers-reduced-motion:reduce){.ava-hj-slide,.ava-hj-visual{transition:none}.ava-hj-track{scroll-behavior:auto}}
+
+
+/* =========================================================
+   Final polish: early back-to-top • fixed search modal • NASA Mission Control
+   ========================================================= */
+
+/* Search must never become part of document flow */
+.ava-search-overlay{
+  position:fixed !important;
+  inset:0 !important;
+  z-index:99999 !important;
+  min-height:100dvh;
+  place-items:start center;
+  overscroll-behavior:contain;
+}
+.ava-search-overlay.open{
+  position:fixed !important;
+}
+.ava-search-dialog{
+  margin:0 auto;
+  animation:none;
+}
+.ava-search-overlay.open .ava-search-dialog{
+  animation:avaSearchPop .26s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes avaSearchPop{
+  from{opacity:0;transform:translateY(-12px) scale(.965)}
+  to{opacity:1;transform:none}
+}
+
+/* Earlier back-to-top visibility + slightly stronger presence */
+.ava-back-top{
+  bottom:26px;
+  box-shadow:0 14px 34px rgba(72,156,180,.32),0 0 22px rgba(102,220,230,.12);
+}
+
+/* Minimal horizontal journey header */
+.ava-hj-head-minimal{
+  margin-bottom:10px;
+  text-align:center;
+}
+.ava-hj-head-minimal span{
+  display:inline-flex;
+  align-items:center;
+  min-height:34px;
+  padding:6px 13px;
+  border:1px solid rgba(94,202,214,.24);
+  border-radius:999px;
+  background:rgba(255,255,255,.46);
+  backdrop-filter:blur(10px);
+}
+html.dark .ava-hj-head-minimal span,body.dark .ava-hj-head-minimal span{
+  background:rgba(12,28,44,.55);
+}
+
+/* NASA Mission Control */
+.mission-page{
+  --mission-cyan:#67e1ea;
+  --mission-blue:#4e9de7;
+  --mission-violet:#8b76ee;
+  background:
+    radial-gradient(circle at 8% 8%,rgba(79,214,226,.12),transparent 28rem),
+    radial-gradient(circle at 92% 15%,rgba(132,109,239,.12),transparent 30rem),
+    linear-gradient(180deg,#f8fdff,#f4f8ff 55%,#f8fcfd);
+}
+.mission-hero{
+  position:relative;
+  overflow:hidden;
+  padding:72px 0 64px;
+  border-bottom:1px solid var(--line);
+}
+.mission-hero::before{
+  content:"";
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(73,159,178,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(73,159,178,.06) 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(to bottom,black,transparent 88%);
+}
+.mission-hero-grid{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  align-items:center;
+  gap:46px;
+}
+.mission-back{display:inline-block;margin-bottom:24px}
+.mission-kicker{
+  display:inline-flex;
+  padding:6px 11px;
+  border-radius:999px;
+  border:1px solid rgba(84,199,212,.30);
+  background:rgba(91,210,221,.08);
+  color:var(--primary-dark);
+  font-weight:950;
+  letter-spacing:1.7px;
+  font-size:11px;
+}
+.mission-copy h1{
+  margin:14px 0 15px;
+  font-size:clamp(48px,8vw,94px);
+  line-height:.98;
+  letter-spacing:-3px;
+}
+.mission-copy h1 span{
+  display:inline-block;
+  filter:drop-shadow(0 0 18px rgba(91,220,230,.35));
+}
+.mission-lead{
+  max-width:760px;
+  margin:0;
+  font-size:clamp(15px,1.8vw,19px);
+  color:var(--muted);
+}
+.mission-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.mission-tags span{
+  padding:6px 10px;border-radius:9px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  color:var(--primary-dark);
+  font-size:10px;font-weight:950;letter-spacing:1.2px;
+}
+
+.mission-radar{
+  position:relative;
+  width:min(360px,72vw);
+  aspect-ratio:1;
+  justify-self:center;
+  border-radius:50%;
+  background:
+    radial-gradient(circle,rgba(96,225,235,.10),transparent 58%),
+    rgba(255,255,255,.48);
+  border:1px solid rgba(89,211,222,.28);
+  box-shadow:0 22px 70px rgba(37,105,129,.12),inset 0 0 55px rgba(82,206,218,.07);
+  overflow:hidden;
+}
+.radar-ring{position:absolute;border:1px solid rgba(69,176,196,.22);border-radius:50%;inset:12%}
+.radar-ring.r2{inset:29%}.radar-ring.r3{inset:45%}
+.mission-radar::before,.mission-radar::after{
+  content:"";position:absolute;background:rgba(71,177,196,.18)
+}
+.mission-radar::before{width:1px;top:8%;bottom:8%;left:50%}
+.mission-radar::after{height:1px;left:8%;right:8%;top:50%}
+.radar-sweep{
+  position:absolute;inset:0;border-radius:50%;
+  background:conic-gradient(from 20deg,rgba(100,228,236,.26),transparent 20%,transparent 100%);
+  animation:missionSweep 5.5s linear infinite;
+}
+@keyframes missionSweep{to{transform:rotate(360deg)}}
+.radar-core{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:105px;height:105px;border-radius:50%;
+  display:grid;place-items:center;text-align:center;
+  color:#fff;font-weight:950;font-size:20px;
+  background:linear-gradient(135deg,#42c8d4,#665fda);
+  box-shadow:0 0 35px rgba(72,205,216,.32);
+}
+.radar-core small{font-size:7px;letter-spacing:1.2px;opacity:.82}
+.radar-dot{position:absolute;width:7px;height:7px;border-radius:50%;background:#52d8e1;box-shadow:0 0 14px #52d8e1}
+.radar-dot.d1{left:27%;top:24%}.radar-dot.d2{right:21%;top:42%}.radar-dot.d3{left:34%;bottom:18%}
+
+.mission-section{position:relative}
+.mission-console{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.console-card,.mission-panel,.mission-skills article{
+  background:rgba(255,255,255,.72);
+  border:1px solid var(--line);
+  backdrop-filter:blur(12px);
+  box-shadow:var(--shadow);
+}
+.console-card{
+  min-height:150px;
+  padding:19px;
+  border-radius:20px;
+  display:flex;flex-direction:column;gap:5px;
+}
+.console-card small,.mission-label,.mission-heading small,.mission-roadmap small,.mission-final small{
+  color:var(--primary-dark);
+  font-weight:950;
+  letter-spacing:1.35px;
+  font-size:10px;
+}
+.console-card strong{font-size:16px;line-height:1.35}
+.console-card strong i{
+  display:inline-block;width:8px;height:8px;border-radius:50%;
+  background:#39d98a;box-shadow:0 0 13px rgba(57,217,138,.55);
+  margin-inline-end:5px;
+}
+.console-card span{margin-top:auto;color:var(--muted);font-size:12px}
+
+.mission-two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.mission-panel{border-radius:26px;padding:28px;min-height:230px}
+.mission-panel h2{margin:8px 0 8px;font-size:28px}
+.mission-panel p{margin:0;color:var(--muted)}
+.mission-panel strong{color:var(--text)}
+
+.mission-heading{margin-bottom:24px}
+.mission-skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mission-skills article{
+  min-height:180px;
+  border-radius:24px;
+  padding:22px;
+  display:flex;flex-direction:column;
+  transition:.2s;
+}
+.mission-skills article:hover{transform:translateY(-4px);border-color:rgba(89,210,221,.52)}
+.mission-skills b{font-size:31px}
+.mission-skills strong{margin-top:10px;font-size:17px}
+.mission-skills span{margin-top:4px;color:var(--muted);font-size:12px}
+
+.mission-roadmap{
+  position:relative;
+  width:min(900px,100%);
+  margin:auto;
+  display:grid;
+  gap:14px;
+}
+.mission-line{
+  position:absolute;
+  top:28px;bottom:28px;
+  right:26px;width:2px;
+  background:linear-gradient(to bottom,var(--mission-cyan),var(--mission-violet));
+  opacity:.34;
+}
+html[dir="ltr"] .mission-line{right:auto;left:26px}
+.mission-roadmap article{
+  position:relative;
+  display:grid;
+  grid-template-columns:54px 1fr;
+  align-items:start;
+  gap:14px;
+  padding:18px;
+  border-radius:22px;
+  background:rgba(255,255,255,.70);
+  border:1px solid var(--line);
+  box-shadow:0 10px 30px rgba(60,111,130,.07);
+}
+.mission-roadmap em{
+  position:relative;z-index:1;
+  width:38px;height:38px;border-radius:13px;
+  display:grid;place-items:center;
+  font-style:normal;font-size:11px;font-weight:950;
+  color:#fff;background:linear-gradient(135deg,#4bcbd6,#776be7);
+  box-shadow:0 0 20px rgba(79,205,216,.22);
+}
+.mission-roadmap h3{margin:2px 0 3px;font-size:18px}
+.mission-roadmap p{margin:0;color:var(--muted);font-size:13px}
+.mission-roadmap .destination{
+  border-color:rgba(97,219,229,.42);
+  background:linear-gradient(135deg,rgba(83,209,220,.10),rgba(127,106,235,.08));
+}
+.mission-roadmap .destination em{font-size:20px}
+
+.mission-final{
+  position:relative;
+  overflow:hidden;
+  padding:86px 0;
+  text-align:center;
+  color:#effcff;
+  background:
+    radial-gradient(circle at 20% 15%,rgba(80,215,226,.20),transparent 24rem),
+    radial-gradient(circle at 82% 30%,rgba(136,111,245,.22),transparent 26rem),
+    linear-gradient(135deg,#071625,#101b39 55%,#0a1126);
+}
+.mission-final::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(219,251,255,.42) 1px,transparent 1.5px);
+  background-size:52px 52px;opacity:.42;
+}
+.mission-final .container{position:relative;z-index:1}
+.mission-final h2{font-size:clamp(34px,6vw,64px);margin:8px 0}
+.mission-final p{margin:0;color:#adc4d3}
+
+html.dark .mission-page,body.dark .mission-page{
+  background:
+    radial-gradient(circle at 8% 8%,rgba(67,198,214,.13),transparent 28rem),
+    radial-gradient(circle at 92% 15%,rgba(115,90,235,.15),transparent 30rem),
+    linear-gradient(180deg,#081421,#0b1728 55%,#07111c);
+}
+html.dark .mission-radar,body.dark .mission-radar,
+html.dark .console-card,body.dark .console-card,
+html.dark .mission-panel,body.dark .mission-panel,
+html.dark .mission-skills article,body.dark .mission-skills article,
+html.dark .mission-roadmap article,body.dark .mission-roadmap article{
+  background:rgba(12,28,43,.76);
+}
+html.dark .mission-roadmap .destination,body.dark .mission-roadmap .destination{
+  background:linear-gradient(135deg,rgba(65,196,210,.12),rgba(115,92,231,.12));
+}
+
+@media(max-width:900px){
+  .mission-hero-grid{grid-template-columns:1fr;text-align:center}
+  .mission-copy{display:flex;flex-direction:column;align-items:center}
+  .mission-console{grid-template-columns:repeat(2,1fr)}
+  .mission-skills{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:680px){
+  .mission-hero{padding:48px 0}
+  .mission-copy h1{letter-spacing:-1px}
+  .mission-radar{width:min(280px,76vw)}
+  .mission-console,.mission-two,.mission-skills{grid-template-columns:1fr}
+  .mission-panel{min-height:0}
+  .mission-roadmap article{padding:15px}
+}
+@media(prefers-reduced-motion:reduce){
+  .radar-sweep{animation:none}
+  .ava-search-overlay.open .ava-search-dialog{animation:none}
+}
