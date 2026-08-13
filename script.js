@@ -211,3 +211,168 @@
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot);
   else boot();
 })();
+
+
+/* =========================================================
+   WOW Scroll Experience
+   ========================================================= */
+(function(){
+  const reduceMotion=window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function addCursorGlow(){
+    if(reduceMotion || matchMedia("(hover:none)").matches || document.querySelector(".ava-cursor-glow")) return;
+    const glow=document.createElement("div");
+    glow.className="ava-cursor-glow";
+    glow.setAttribute("aria-hidden","true");
+    document.body.appendChild(glow);
+    let x=innerWidth/2,y=innerHeight/2,gx=x,gy=y,raf=0;
+    const animate=()=>{
+      gx+=(x-gx)*.14; gy+=(y-gy)*.14;
+      glow.style.left=gx+"px"; glow.style.top=gy+"px";
+      raf=requestAnimationFrame(animate);
+    };
+    document.addEventListener("mousemove",e=>{
+      x=e.clientX;y=e.clientY;document.body.classList.add("ava-mouse-active");
+      if(!raf) animate();
+    },{passive:true});
+    document.addEventListener("mouseleave",()=>document.body.classList.remove("ava-mouse-active"));
+  }
+
+  function addProgressRocket(){
+    if(document.querySelector(".ava-scroll-progress"))return;
+    const el=document.createElement("div");
+    el.className="ava-scroll-progress";
+    el.setAttribute("aria-hidden","true");
+    el.innerHTML='<div class="ava-scroll-progress-fill"></div><div class="ava-scroll-progress-rocket">🚀</div>';
+    document.body.appendChild(el);
+    const fill=el.querySelector(".ava-scroll-progress-fill");
+    const rocket=el.querySelector(".ava-scroll-progress-rocket");
+    const update=()=>{
+      const max=Math.max(1,document.documentElement.scrollHeight-innerHeight);
+      const p=Math.max(0,Math.min(1,scrollY/max));
+      fill.style.height=(p*100)+"%";
+      rocket.style.top=(p*100)+"%";
+    };
+    update(); addEventListener("scroll",update,{passive:true}); addEventListener("resize",update);
+  }
+
+  function addReveal(){
+    const els=[...document.querySelectorAll(
+      ".section-head,.card,.panel,.setting,.detail,.page-head .container,footer .footer"
+    )].filter(el=>!el.closest(".ava-scroll-story"));
+    els.forEach(el=>el.classList.add("ava-reveal"));
+    if(reduceMotion || !("IntersectionObserver" in window)){
+      els.forEach(el=>el.classList.add("ava-visible")); return;
+    }
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add("ava-visible");
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:.12,rootMargin:"0px 0px -7% 0px"});
+    els.forEach(el=>io.observe(el));
+  }
+
+  function addTilt(){
+    if(reduceMotion || matchMedia("(hover:none)").matches)return;
+    const els=[...document.querySelectorAll(".card,.panel")].filter(el=>!el.closest(".ava-scroll-story"));
+    els.forEach(el=>{
+      el.classList.add("ava-tilt");
+      el.addEventListener("mousemove",e=>{
+        const r=el.getBoundingClientRect();
+        const px=(e.clientX-r.left)/r.width, py=(e.clientY-r.top)/r.height;
+        const ry=(px-.5)*7, rx=(.5-py)*7;
+        el.style.setProperty("--mx",(px*100)+"%");
+        el.style.setProperty("--my",(py*100)+"%");
+        el.style.transform=`perspective(780px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-3px)`;
+      });
+      el.addEventListener("mouseleave",()=>{
+        el.style.transform="";
+      });
+    });
+  }
+
+  function addHeroExit(){
+    const hero=document.querySelector(".hero");
+    if(!hero || reduceMotion)return;
+    hero.classList.add("ava-hero-scroll");
+    const update=()=>{
+      const r=hero.getBoundingClientRect();
+      const total=Math.max(1,hero.offsetHeight);
+      const p=Math.max(0,Math.min(1,-r.top/total));
+      hero.style.setProperty("--hero-y",(p*-28)+"px");
+      hero.style.setProperty("--hero-scale",(1-p*.035).toFixed(3));
+      hero.style.setProperty("--hero-opacity",(1-p*.48).toFixed(3));
+    };
+    update(); addEventListener("scroll",update,{passive:true});
+  }
+
+  function addScrollStory(){
+    const story=document.querySelector(".ava-scroll-story");
+    if(!story)return;
+    const sticky=story.querySelector(".ava-story-sticky");
+    const title=story.querySelector("#avaStoryTitle");
+    const text=story.querySelector("#avaStoryText");
+    const steps=[...story.querySelectorAll(".ava-story-steps article")];
+    const dots=[...story.querySelectorAll(".ava-story-dots i")];
+
+    let lastIndex=-1, ticking=false;
+    function update(){
+      ticking=false;
+      const rect=story.getBoundingClientRect();
+      const scrollable=Math.max(1,story.offsetHeight-innerHeight);
+      const p=Math.max(0,Math.min(1,-rect.top/scrollable));
+      const idx=Math.min(steps.length-1,Math.floor(p*steps.length));
+      if(idx!==lastIndex){
+        lastIndex=idx;
+        const st=steps[idx];
+        if(st){
+          title.animate?.([{opacity:.2,transform:"translateY(8px)"},{opacity:1,transform:"none"}],{duration:330,easing:"ease-out"});
+          text.animate?.([{opacity:.1},{opacity:1}],{duration:430,easing:"ease-out"});
+          title.textContent=st.dataset.title||"";
+          text.textContent=st.dataset.text||"";
+          dots.forEach((d,i)=>d.classList.toggle("active",i===idx));
+        }
+      }
+      const deep=Math.max(0,(p-.28)/.72);
+      sticky.classList.toggle("ava-deep-space",p>.38);
+      sticky.style.setProperty("--story-stars",(.08+deep*.88).toFixed(3));
+      sticky.style.setProperty("--story-star-y",(-p*130)+"px");
+      sticky.style.setProperty("--story-panel",(.76-deep*.14).toFixed(3));
+      sticky.style.setProperty("--story-copy-y",((.5-p)*20)+"px");
+      sticky.style.setProperty("--story-copy-scale",(1+Math.sin(p*Math.PI)*.018).toFixed(3));
+      sticky.style.setProperty("--planet-y",(-p*160)+"px");
+      sticky.style.setProperty("--planet-scale",(1-p*.36).toFixed(3));
+      sticky.style.setProperty("--orbit-scale",(1+p*.18).toFixed(3));
+      sticky.style.setProperty("--orbit-opacity",(.14+p*.30).toFixed(3));
+
+      // Rocket flies diagonally from Earth toward the upper-right.
+      const x=14 + p*72;
+      const y=74 - p*57;
+      const rot=-28 + p*42;
+      sticky.style.setProperty("--rocket-x",x+"%");
+      sticky.style.setProperty("--rocket-y",y+"%");
+      sticky.style.setProperty("--rocket-rot",rot+"deg");
+      sticky.style.setProperty("--rocket-scale",(1+p*.22).toFixed(3));
+    }
+    function requestUpdate(){
+      if(!ticking){ticking=true;requestAnimationFrame(update);}
+    }
+    update();
+    addEventListener("scroll",requestUpdate,{passive:true});
+    addEventListener("resize",requestUpdate);
+  }
+
+  function bootWow(){
+    addCursorGlow();
+    addProgressRocket();
+    addReveal();
+    addTilt();
+    addHeroExit();
+    addScrollStory();
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",bootWow);
+  else bootWow();
+})();

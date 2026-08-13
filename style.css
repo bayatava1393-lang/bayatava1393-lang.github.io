@@ -324,3 +324,270 @@ html.dark .hero::after,body.dark .hero::after{
   *,*::before,*::after{scroll-behavior:auto!important}
 }
 
+
+
+/* =========================================================
+   WOW Scroll Experience
+   cinematic scroll story • reveal • parallax • tilt • cursor glow
+   ========================================================= */
+body{overflow-x:hidden}
+.ava-cursor-glow{
+  position:fixed;
+  width:280px;height:280px;border-radius:50%;
+  pointer-events:none;z-index:0;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(87,222,232,.16),rgba(139,121,239,.07) 35%,transparent 68%);
+  filter:blur(6px);
+  opacity:0;
+  transition:opacity .18s ease;
+}
+body.ava-mouse-active .ava-cursor-glow{opacity:1}
+.header,main,footer,.ava-back-top,.ava-search-overlay{position:relative;z-index:2}
+
+/* Scroll progress mission line */
+.ava-scroll-progress{
+  position:fixed;
+  top:84px;
+  right:15px;
+  width:4px;height:calc(100vh - 124px);
+  z-index:350;
+  border-radius:999px;
+  background:rgba(100,186,205,.13);
+  box-shadow:inset 0 0 0 1px rgba(126,218,226,.08);
+  pointer-events:none;
+}
+html[dir="rtl"] .ava-scroll-progress{right:auto;left:15px}
+.ava-scroll-progress-fill{
+  width:100%;height:0;border-radius:999px;
+  background:linear-gradient(to bottom,#7ee8ef,#8e7df0);
+  box-shadow:0 0 12px rgba(102,226,236,.35);
+}
+.ava-scroll-progress-rocket{
+  position:absolute;left:50%;top:0;
+  transform:translate(-50%,-50%) rotate(-12deg);
+  font-size:18px;
+  filter:drop-shadow(0 0 9px rgba(105,232,239,.50));
+}
+
+/* Reveal */
+.ava-reveal{
+  opacity:0;
+  transform:translateY(38px) scale(.985);
+  filter:blur(4px);
+  transition:
+    opacity .7s cubic-bezier(.2,.75,.25,1),
+    transform .8s cubic-bezier(.2,.75,.25,1),
+    filter .7s ease;
+  will-change:transform,opacity;
+}
+.ava-reveal.ava-visible{
+  opacity:1;
+  transform:none;
+  filter:none;
+}
+.grid .ava-reveal:nth-child(2n){transition-delay:.06s}
+.grid .ava-reveal:nth-child(3n){transition-delay:.12s}
+
+/* 3D tilt */
+.ava-tilt{
+  transform-style:preserve-3d;
+  will-change:transform;
+}
+.ava-tilt::before{
+  content:"";
+  position:absolute;inset:0;border-radius:inherit;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(152,239,245,.18),transparent 38%);
+  opacity:0;transition:opacity .18s;
+  pointer-events:none;z-index:0;
+}
+.ava-tilt:hover::before{opacity:1}
+.ava-tilt>*{position:relative;z-index:1}
+
+/* Cinematic scroll-story */
+.ava-scroll-story{
+  position:relative;
+  min-height:560vh;
+  background:
+    radial-gradient(circle at 50% 5%,rgba(84,215,225,.10),transparent 28rem),
+    linear-gradient(180deg,#f6fdff 0%,#eefdff 12%,#dfeafb 28%,#5d6e97 50%,#171d38 72%,#070d19 100%);
+  border-block:1px solid rgba(105,196,209,.20);
+}
+.ava-story-sticky{
+  position:sticky;
+  top:72px;
+  height:calc(100vh - 72px);
+  min-height:560px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  isolation:isolate;
+}
+.ava-story-sticky::after{
+  content:"";
+  position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(to bottom,rgba(255,255,255,.16),transparent 40%,rgba(4,10,21,.35));
+  pointer-events:none;
+}
+.ava-story-space{
+  position:absolute;inset:0;z-index:-1;
+  overflow:hidden;
+}
+.ava-story-space::before,
+.ava-story-space::after{
+  content:"";
+  position:absolute;inset:-20%;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.78) 1px,transparent 1.7px),
+    radial-gradient(circle,rgba(127,233,240,.55) 1px,transparent 1.5px);
+  background-size:54px 54px,89px 89px;
+  background-position:0 0,21px 33px;
+  opacity:var(--story-stars,.08);
+  transform:translateY(var(--story-star-y,0px)) scale(1.05);
+  transition:opacity .25s linear;
+}
+.ava-story-space::after{
+  background-size:115px 115px,147px 147px;
+  opacity:calc(var(--story-stars,.08) * .75);
+  transform:translateY(calc(var(--story-star-y,0px) * .45)) scale(1.15);
+}
+.ava-story-copy{
+  width:min(880px,calc(100% - 34px));
+  text-align:center;
+  padding:34px;
+  border-radius:30px;
+  background:rgba(255,255,255,var(--story-panel,.72));
+  border:1px solid rgba(164,229,235,.30);
+  backdrop-filter:blur(18px);
+  box-shadow:0 28px 100px rgba(9,28,54,.18),0 0 70px rgba(88,220,231,.08);
+  transform:translateY(var(--story-copy-y,0px)) scale(var(--story-copy-scale,1));
+  transition:background .25s ease,color .25s ease;
+}
+.ava-story-kicker{
+  color:#2caeb9;font-size:12px;font-weight:950;letter-spacing:2.4px;
+}
+.ava-story-copy h2{
+  margin:12px 0 8px;
+  font-size:clamp(38px,7vw,82px);
+  line-height:1.04;
+  letter-spacing:-1.6px;
+}
+.ava-story-copy p{
+  margin:0 auto;
+  max-width:690px;
+  font-size:clamp(15px,2vw,20px);
+  color:var(--muted);
+}
+.ava-story-dots{
+  display:flex;justify-content:center;gap:7px;margin-top:24px;
+}
+.ava-story-dots i{
+  width:7px;height:7px;border-radius:999px;background:rgba(72,133,154,.28);
+  transition:.25s;
+}
+.ava-story-dots i.active{
+  width:30px;background:linear-gradient(90deg,#5bd6df,#8d7cf0);
+  box-shadow:0 0 13px rgba(91,214,223,.32);
+}
+.ava-story-planet{
+  position:absolute;
+  width:min(42vw,470px);aspect-ratio:1;border-radius:50%;
+  left:-8vw;bottom:-18vw;
+  background:
+    radial-gradient(circle at 36% 28%,rgba(255,255,255,.75),transparent 3%),
+    radial-gradient(circle at 45% 38%,#85e0e4 0 15%,transparent 16%),
+    radial-gradient(circle at 60% 55%,#78b9d4 0 13%,transparent 14%),
+    radial-gradient(circle at 48% 50%,#d7f2f0 0 48%,#78aac4 49% 66%,#43698c 67%);
+  box-shadow:0 0 70px rgba(89,211,223,.19);
+  transform:translateY(var(--planet-y,0px)) scale(var(--planet-scale,1));
+}
+.ava-story-orbit{
+  position:absolute;
+  width:min(66vw,760px);height:min(25vw,290px);
+  right:-13vw;top:12%;
+  border:1px solid rgba(178,225,244,.22);
+  border-radius:50%;
+  transform:rotate(-16deg) scale(var(--orbit-scale,1));
+  opacity:var(--orbit-opacity,.2);
+}
+.ava-story-rocket{
+  position:absolute;
+  left:var(--rocket-x,14%);
+  top:var(--rocket-y,72%);
+  font-size:clamp(34px,6vw,68px);
+  transform:translate(-50%,-50%) rotate(var(--rocket-rot,-28deg)) scale(var(--rocket-scale,1));
+  filter:drop-shadow(0 0 18px rgba(117,231,239,.50));
+  transition:filter .2s;
+}
+.ava-story-star{
+  position:absolute;width:5px;height:5px;border-radius:50%;
+  background:#dffcff;box-shadow:0 0 13px #9debf0;
+  opacity:var(--story-stars,.08);
+}
+.ava-story-star.s1{left:12%;top:21%}
+.ava-story-star.s2{right:18%;top:16%;width:7px;height:7px}
+.ava-story-star.s3{left:72%;top:68%}
+.ava-story-star.s4{left:32%;top:74%;width:3px;height:3px}
+.ava-story-steps{position:absolute;inset:0;pointer-events:none}
+.ava-story-steps article{height:20%;}
+
+/* Deep space state driven by JS progress variable */
+.ava-story-sticky.ava-deep-space .ava-story-copy{
+  background:rgba(9,20,37,var(--story-panel,.66));
+  color:#edfaff;
+  border-color:rgba(115,225,234,.22);
+}
+.ava-story-sticky.ava-deep-space .ava-story-copy p{color:#afc4d4}
+.ava-story-sticky.ava-deep-space .ava-story-kicker{color:#7ce6ed}
+
+/* Home hero exit feeling */
+.hero{will-change:transform,opacity}
+.hero.ava-hero-scroll{
+  transform:translateY(var(--hero-y,0px)) scale(var(--hero-scale,1));
+  opacity:var(--hero-opacity,1);
+}
+
+/* Give footer an arrival glow */
+footer{position:relative}
+footer::before{
+  content:"";position:absolute;left:50%;top:-1px;width:min(620px,70%);height:1px;
+  transform:translateX(-50%);
+  background:linear-gradient(90deg,transparent,rgba(102,222,232,.55),transparent);
+}
+
+/* Dark mode keeps the story deep-space from the beginning */
+html.dark .ava-scroll-story,body.dark .ava-scroll-story{
+  background:
+    radial-gradient(circle at 50% 4%,rgba(74,208,222,.12),transparent 28rem),
+    linear-gradient(180deg,#0d2032 0%,#102139 18%,#111d35 36%,#0e1830 58%,#091322 78%,#050a13 100%);
+}
+html.dark .ava-story-copy,body.dark .ava-story-copy{
+  background:rgba(8,21,36,var(--story-panel,.70));
+  color:#eefbff;
+  border-color:rgba(113,224,233,.22);
+}
+html.dark .ava-story-copy p,body.dark .ava-story-copy p{color:#afc3cf}
+
+/* Mobile: still cinematic but lighter */
+@media(max-width:760px){
+  .ava-scroll-progress{display:none}
+  .ava-scroll-story{min-height:430vh}
+  .ava-story-sticky{top:70px;height:calc(100vh - 70px);min-height:520px}
+  .ava-story-copy{padding:25px 18px;border-radius:24px}
+  .ava-story-copy h2{font-size:clamp(34px,12vw,58px)}
+  .ava-story-planet{width:70vw;left:-24vw;bottom:-20vw}
+  .ava-story-orbit{width:100vw;height:42vw;right:-40vw;top:10%}
+  .ava-cursor-glow{display:none}
+}
+
+/* Touch devices: avoid 3D hover weirdness */
+@media(hover:none){
+  .ava-tilt{transform:none!important}
+  .ava-tilt::before{display:none}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .ava-reveal{opacity:1;transform:none;filter:none;transition:none}
+  .ava-story-space::before,.ava-story-space::after,
+  .ava-story-copy,.ava-story-planet,.ava-story-orbit,.ava-story-rocket{transform:none!important}
+  .ava-scroll-story{min-height:180vh}
+}
