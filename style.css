@@ -936,3 +936,13 @@ html.dark .mission-roadmap .destination,body.dark .mission-roadmap .destination{
   .radar-sweep{animation:none}
   .ava-search-overlay.open .ava-search-dialog{animation:none}
 }
+
+
+/* Certificate gallery */
+.certs-title{margin-bottom:18px}.certs-title p{color:var(--muted);margin:6px 0 0}
+.certs-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.cert-item{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:14px;box-shadow:var(--shadow)}
+.cert-item img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
+.cert-item h3{font-size:17px;margin:12px 2px 0}.cert-item p{font-size:13px;color:var(--muted);margin:5px 2px 0}
+@media(max-width:900px){.certs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.certs-grid{grid-template-columns:1fr}}
