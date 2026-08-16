@@ -1,0 +1,10 @@
+AVA review build
+- Header glow dot removed.
+- Hero centered in Persian and English.
+- Home cards float as whole cards; inner content stays stable.
+- About page is static; age and birth date added.
+- Sports text updated; Karen Gym removed; Body Flex link added.
+- Back buttons redesigned and use browser history when possible.
+- Movies updated, Aladdin changed to 2019 live-action.
+- Harry Potter movie page expanded to all 8 main films.
+- Persian/English watch links added where available.

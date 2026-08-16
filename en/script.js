@@ -2,7 +2,7 @@
 (function(){
   const key="avaSettings";
   const isEN=document.documentElement.lang==="en" || location.pathname.includes("/en/");
-  const SEARCH_DATA=[{"title":"About Ava","meta":"About Ava | Ava Bayat","text":"About Ava | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back About Ava Who am I? I am Ava Bayat, a Grade 7 student. I enjoy programming, robotics, books, English, art, movies, music, board games, and sports. I like learning new things and building skills step by step for my future. My interests 🎓 Student 💻 Programming 🤖 Robotics 📚 Books 🇬🇧 English 🎨 Art 🎬 Movies 🧠 Board Games Ava Bayat My dream is bigger than the sky. ✨ ©","url":"about.html"},{"title":"Aladdin","meta":"Aladdin | Ava Bayat","text":"Aladdin | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Aladdin 🎬 Aladdin About A young man discovers a magic lamp and begins a life-changing adventure. View / search the original title ↗ Details Title: Aladdin Year: 1992 Director: John Musker and Ron Clements Country: United States Type: Animated film Ava Bayat My dream is bigger than the sky. ✨ ©","url":"aladdin.html"},{"title":"Art","meta":"Art | Ava Bayat","text":"Art | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Art 🎨 My art gallery This page is for the drawings I like the most. 🎨 My drawings will be added here. Ava Bayat My dream is bigger than the sky. ✨ ©","url":"art.html"},{"title":"Azul","meta":"Azul | Ava Bayat","text":"Azul | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Azul 🟦 Azul About the game A tile-drafting board game about choosing tiles, building patterns, and scoring points. Search the original game ↗ Details Name: Azul Type: Board game Ava Bayat My dream is bigger than the sky. ✨ ©","url":"azul.html"},{"title":"The Boy, the Mole, the Fox and the Horse","meta":"The Boy, the Mole, the Fox and the Horse | Ava Bayat","text":"The Boy, the Mole, the Fox and the Horse | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back The Boy, the Mole, the Fox and the Horse 📖 The Boy, the Mole, the Fox and the Horse About the book An illustrated story about friendship, kindness, hope, courage, and meaningful conversations. Search the original edition ↗ Details Title: The Boy, the Mole, the Fox and the Horse Author: Charlie Mackesy Country: United Kingdom Year: 2019 Ava Bayat My dream is bigger than the sky. ✨ ©","url":"book-boy.html"},{"title":"The War That Saved My Life","meta":"The War That Saved My Life | Ava Bayat","text":"The War That Saved My Life | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back The War That Saved My Life 📖 The War That Saved My Life About the book A historical novel about Ada, a girl who escapes an unsafe home during World War II and discovers courage, freedom, and a new life. Search the original edition ↗ Details Title: The War That Saved My Life Author: Kimberly Brubaker Bradley Country: United States Year: 2015 Ava Bayat My dream is bigger than the sky. ✨ ©","url":"book-war.html"},{"title":"Books","meta":"Books | Ava Bayat","text":"Books | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Books 📖 The War That Saved My Life Kimberly Brubaker Bradley 🦊 The Boy, the Mole, the Fox and the Horse Charlie Mackesy ⚡ Harry Potter Collection J. K. Rowling 🎁 The Memory Box Joanna Rowland 📚 Rigo and Rosa Adventures Original title/edition to be confirmed Ava Bayat My dream is bigger than the sky. ✨ ©","url":"books.html"},{"title":"Sakhteman Pezeshkan","meta":"Sakhteman Pezeshkan | Ava Bayat","text":"Sakhteman Pezeshkan | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Sakhteman Pezeshkan 🎬 Sakhteman Pezeshkan About An Iranian comedy series about a psychiatrist and the funny situations around his personal and professional life. View / search the original title ↗ Details Title: Sakhteman Pezeshkan Year: 2011 Director: Soroush Sehat Country: Iran Type: TV series Ava Bayat My dream is bigger than the sky. ✨ ©","url":"building-doctors.html"},{"title":"Contact Me","meta":"Contact Me | Ava Bayat","text":"Contact Me | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Contact Me 💌 Contact My contact information is not public yet. This page can be completed later when I choose the contact methods I want to share. Ava Bayat My dream is bigger than the sky. ✨ ©","url":"contact.html"},{"title":"English","meta":"English | Ava Bayat","text":"English | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back English 🇬🇧 My English journey My current English book is Got It 3 . I keep studying English and improving step by step. 📜 My English certificates and report cards will be added here. Details Book: Got It 3 Ava Bayat My dream is bigger than the sky. ✨ ©","url":"english.html"},{"title":"Board Games","meta":"Board Games | Ava Bayat","text":"Board Games | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Board Games 💎 Splendor Game page 🟦 Azul Game page 🧩 Pastor Game page Ava Bayat My dream is bigger than the sky. ✨ ©","url":"games.html"},{"title":"Be Recognized","meta":"Be Recognized | Ava Bayat","text":"Be Recognized | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Be Recognized 🌟 Be Recognized I want to be known for the things I create, learn, and accomplish. Ava Bayat My dream is bigger than the sky. ✨ ©","url":"goal-known.html"},{"title":"Migration","meta":"Migration | Ava Bayat","text":"Migration | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Migration ✈️ Migration I would love to experience a new environment, keep learning, and build my own path in the future. Ava Bayat My dream is bigger than the sky. ✨ ©","url":"goal-migration.html"},{"title":"MISSION: NASA 🚀","meta":"Mission: NASA | Ava Bayat","text":"Mission: NASA | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back to goals FUTURE MISSION // AVA-01 MISSION: NASA 🚀 Build the knowledge, skills, and experience to become an engineer in space and technology — and one day work on real space projects. SPACE ENGINEERING TECHNOLOGY NASA DESTINATION MISSION STATUS ACTIVE The mission is in progress. DESTINATION NASA Space & technology CURRENT STAGE LEARNING + BUILDING Growing the core skills. MISSION TYPE ENGINEERING Science, code, robotics & problem solving. 01 // FINAL GOAL What is the mission? Become an engineer in space and technology, build strong technical skills, and reach the level where I can contribute to real-world space projects. 02 // WHY THIS PATH Why space? Because space brings together the things I enjoy most: programming, robotics, science, technology, creativity, and solving difficult problems. 03 // CORE SYSTEMS Skills to build The systems that power this mission. 💻 Programming Turning ideas into working systems. 🤖 Robotics Building, testing, and controlling machines. 📐 Mathematics The language behind engineering. ⚛️ Physics Understanding how the world — and space — works. 🇬🇧 English","url":"goal-nasa.html"},{"title":"My Goals","meta":"My Goals | Ava Bayat","text":"My Goals | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back My Goals ✈️ Migration A future goal and a new path. 🚀 Become a NASA Engineer A dream in engineering and space. 🌟 Be Recognized Create things worth being known for. Ava Bayat My dream is bigger than the sky. ✨ ©","url":"goals.html"},{"title":"Harry Potter Collection","meta":"Harry Potter Collection | Ava Bayat","text":"Harry Potter Collection | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Harry Potter Collection ⚡ Harry Potter The seven books Harry Potter and the Philosopher’s Stone — 1997 Harry Potter and the Chamber of Secrets — 1998 Harry Potter and the Prisoner of Azkaban — 1999 Harry Potter and the Goblet of Fire — 2000 Harry Potter and the Order of the Phoenix — 2003 Harry Potter and the Half-Blood Prince — 2005 Harry Potter and the Deathly Hallows — 2007 Search the original editions ↗ Details Author: J. K. Rowling Country: United Kingdom First published: 1997 Ava Bayat My dream is bigger than the sky. ✨ ©","url":"harry-potter-books.html"},{"title":"Harry Potter and the Philosopher’s Stone","meta":"Harry Potter and the Philosopher’s Stone | Ava Bayat","text":"Harry Potter and the Philosopher’s Stone | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Harry Potter and the Philosopher’s Stone 🎬 Harry Potter and the Philosopher’s Stone About Harry discovers that he is a wizard and begins his first year at Hogwarts. View / search the original title ↗ Details Title: Harry Potter and the Philosopher’s Stone Year: 2001 Director: Chris Columbus Country: United Kingdom / United States Type: Film Ava Bayat My dream is bigger than the sky. ✨ ©","url":"harry-potter-movie.html"},{"title":"My dream is bigger than the sky. ✨","meta":"Ava Bayat | Personal Website","text":"Ava Bayat | Personal Website Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian WELCOME TO AVA'S UNIVERSE ✨ My dream is bigger than the sky. ✨ A little universe of learning, creativity, interests, experiences, and future dreams. About Ava Projects AVA\'S JOURNEY ✦ ‹ 01 🌍 START I start from Earth Learning, curiosity, and building are where every big mission begins. 02 🌐 LEARNING English & Learning Every new skill opens another window to a bigger world. 03 🤖 BUILD Programming & Robotics Ideas become projects, code, and real things. 04 ✨ DREAM BIG Bigger Goals Dreams are not only for imagining. They are for chasing. 05 🚀 NEXT STOP NASA My dream is bigger than the sky. ✨ See my NASA goal › AVA'S UNIVERSE Explore my world Every section has its own page. 👩🏻‍🚀 About Ava Who I am and the things I love. 🎓 Student Grade 7 and my learning journey. 💻 Programming Courses, skills, and certificates. 🤖 Robotics 4th place in a national robotics competition. 📚 Books My favorite books and their details. 🏃🏻‍♀️ Sports Body Flex at Karen Gym. 🇬🇧 English Got It 3 and my certificates. 🎨 Art My favorite drawings. 🎬 Movies & Series Movies, anime, and series I love. 🎵 Music My favorite son","url":"index.html"},{"title":"The Memory Box","meta":"The Memory Box | Ava Bayat","text":"The Memory Box | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back The Memory Box 📖 The Memory Box About the book An illustrated story about memories, love, grief, and keeping someone special close. Search the original edition ↗ Details Title: The Memory Box Author: Joanna Rowland Country: United States Year: 2017 Ava Bayat My dream is bigger than the sky. ✨ ©","url":"memory-box.html"},{"title":"Movies & Series","meta":"Movies & Series | Ava Bayat","text":"Movies & Series | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Movies & Series 🎬 Sakhteman Pezeshkan TV series 🎬 Ponyo Animated film 🎬 Aladdin Animated film 🎬 Harry Potter and the Philosopher’s Stone Film 🎬 Stranger Things TV series Ava Bayat My dream is bigger than the sky. ✨ ©","url":"movies.html"},{"title":"Music","meta":"Music | Ava Bayat","text":"Music | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Music 🎵 Khoneye Ma Kourosh · Search original song 🎵 Shab-Zadeh Ebi · Search original song 🎵 Tarsidam Azat Dadan · Search original song 🎵 Laleh Ra Didan Shervin · Search original song 🎵 Meet You at Graveyard Cliff · Search original song Ava Bayat My dream is bigger than the sky. ✨ ©","url":"music.html"},{"title":"Pastor","meta":"Pastor | Ava Bayat","text":"Pastor | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Pastor 🧩 Pastor About the game One of my favorite thinking games. Exact edition details can be added later. Search the original game ↗ Details Name: Pastor Type: Board game Ava Bayat My dream is bigger than the sky. ✨ ©","url":"pastor.html"},{"title":"Ponyo","meta":"Ponyo | Ava Bayat","text":"Ponyo | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Ponyo 🎬 Ponyo About A magical story about a little fish named Ponyo who wants to become human and becomes friends with Sosuke. View / search the original title ↗ Details Title: Ponyo Year: 2008 Director: Hayao Miyazaki Country: Japan Type: Animated film Ava Bayat My dream is bigger than the sky. ✨ ©","url":"ponyo.html"},{"title":"Programming","meta":"Programming | Ava Bayat","text":"Programming | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Programming 💻 My programming journey Programming is one of my main interests. I have completed several computer science courses on Code.org and I enjoy turning ideas into real projects. 📜 My Code.org certificates will be displayed here. Certificates Course A — Code.org — 2023 Course B — Code.org — 2023 Course C — Code.org — 2023 Course D — Code.org — 2024 Ava Bayat My dream is bigger than the sky. ✨ ©","url":"programming.html"},{"title":"Projects","meta":"Projects | Ava Bayat","text":"Projects | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Projects 💻 Programming My coding journey, courses, and future projects. 🤖 Robotics My national robotics achievement. Ava Bayat My dream is bigger than the sky. ✨ ©","url":"projects.html"},{"title":"Rigo and Rosa Adventures","meta":"Rigo and Rosa Adventures | Ava Bayat","text":"Rigo and Rosa Adventures | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Rigo and Rosa Adventures 📚 Rigo and Rosa Adventures About the book This is one of my favorite books. The exact English edition information can be completed later once the precise original title is confirmed. Search the original edition ↗ Details Title: Rigo and Rosa Adventures Author: To be confirmed Ava Bayat My dream is bigger than the sky. ✨ ©","url":"rigo-rosa.html"},{"title":"Robotics","meta":"Robotics | Ava Bayat","text":"Robotics | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Robotics 🏆 4th Place in National Robotics One of my proud achievements is earning fourth place in a national robotics competition. 🤖 Competition documents and photos will be added here. Achievement Rank: 4th Level: National Ava Bayat My dream is bigger than the sky. ✨ ©","url":"robotics.html"},{"title":"⚙️ Settings","meta":"Settings | Ava Bayat","text":"Settings | Ava Bayat Ava Bayat 🇮🇷 Persian ← Back ⚙️ Settings 🌙 Display mode Choose the appearance you prefer. ☀️ Light 🌙 Dark 🌐 Site language Switch between the English and Persian versions. 🇬🇧 English 🇮🇷 Persian 🔤 Text size Small Medium Large 🔔 Notifications This is reserved for future website features. 🔔 On 🔕 Off 💾 Save settings Save settings 🧹 Reset settings Reset display and text settings to their defaults. Reset settings Ava Bayat My dream is bigger than the sky. ✨","url":"settings.html"},{"title":"Splendor","meta":"Splendor | Ava Bayat","text":"Splendor | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Splendor 💎 Splendor About the game A strategy board game about collecting gems, managing resources, and building an efficient engine. Search the original game ↗ Details Name: Splendor Type: Board game Ava Bayat My dream is bigger than the sky. ✨ ©","url":"splendor.html"},{"title":"Sports","meta":"Sports | Ava Bayat","text":"Sports | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Sports 🏃🏻‍♀️ Body Flex I do Body Flex at Karen Gym . Sports are part of my routine and help me stay active. Details Activity: Body Flex Gym: Karen Gym Ava Bayat My dream is bigger than the sky. ✨ ©","url":"sports.html"},{"title":"Stranger Things","meta":"Stranger Things | Ava Bayat","text":"Stranger Things | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Stranger Things 🎬 Stranger Things About A science-fiction mystery series about strange events and a group of friends in Hawkins. View / search the original title ↗ Details Title: Stranger Things Year: 2016 Director: The Duffer Brothers Country: United States Type: TV series Ava Bayat My dream is bigger than the sky. ✨ ©","url":"stranger-things.html"},{"title":"Student","meta":"Student | Ava Bayat","text":"Student | Ava Bayat Ava Bayat ☰ Home About Ava Projects Contact Me ⚙️ Settings 🇮🇷 Persian ← Back Student My learning path I am a Grade 7 student. Alongside school, I keep learning programming and English and try to improve my problem-solving, creativity, and study habits. What I am learning School subjects, English, programming, projects, and skills that can help me build a strong future. Quick facts Grade: 7 Learning interests: Programming and English Goal: Build a strong foundation for the future Ava Bayat My dream is bigger than the sky. ✨ ©","url":"student.html"}];
+  const SEARCH_DATA=[{"title":"درباره آوا","meta":"درباره آوا | آوا بیات","text":"درباره آوا | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← درباره آوا من کی هستم؟ من آوا بیات، دانش‌آموز پایه هفتم هستم. به برنامه‌نویسی، رباتیک، کتاب، زبان انگلیسی، فیلم، موسیقی، بازی‌های فکری و ورزش علاقه دارم. دوست دارم چیزهای تازه یاد بگیرم و قدم‌به‌قدم برای آینده‌ام مهارت بسازم. علاقه‌های من 🎓 دانش‌آموز 💻 برنامه‌نویسی 🤖 رباتیک 📚 کتاب 🇬🇧 انگلیسی  🎬 فیلم 🧠 بازی فکری آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"about.html"},{"title":"علاءالدین","meta":"علاءالدین | آوا بیات","text":"علاءالدین | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← علاءالدین 🎬 علاءالدین معرفی داستان علاءالدین، چراغ جادو و ماجرایی که زندگی او را تغییر می‌دهد. ▶️ جست‌وجوی نسخه اصلی مشخصات عنوان: علاءالدین سال ساخت: ۲۰۱۹ کارگردان: گای ریچی کشور: ایالات متحده نوع: فیلم سینمایی آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"aladdin.html"},{"title":"Azul","meta":"Azul | آوا بیات","text":"Azul | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← Azul 🟦 Azul درباره بازی یک بازی انتخاب کاشی و ساخت الگو که به برنامه‌ریزی دقیق نیاز دارد. 🔎 جست‌وجوی نسخه اصلی مشخصات نام: Azul نوع: بازی فکری آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"azul.html"},{"title":"پسرک، موش کور، روباه و اسب","meta":"پسرک، موش کور، روباه و اسب | آوا بیات","text":"پسرک، موش کور، روباه و اسب | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← پسرک، موش کور، روباه و اسب 📚 پسرک، موش کور، روباه و اسب معرفی کتاب کتابی تصویری درباره دوستی، مهربانی، امید و شجاعت. 📖 جست‌وجوی نسخه اصلی مشخصات عنوان: پسرک، موش کور، روباه و اسب نویسنده: چارلی مکسی کشور: بریتانیا سال انتشار: ۲۰۱۹ آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"book-boy.html"},{"title":"جنگی که نجاتم داد","meta":"جنگی که نجاتم داد | آوا بیات","text":"جنگی که نجاتم داد | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← جنگی که نجاتم داد 📚 جنگی که نجاتم داد معرفی کتاب رمانی درباره آدا، دختری که در دوران جنگ جهانی دوم با شجاعت مسیر زندگی تازه‌ای را تجربه می‌کند. 📖 جست‌وجوی نسخه اصلی مشخصات عنوان: جنگی که نجاتم داد نویسنده: کیمبرلی بروبیکر بردلی کشور: ایالات متحده سال انتشار: ۲۰۱۵ آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"book-war.html"},{"title":"کتاب‌ها","meta":"کتاب‌ها | آوا بیات","text":"کتاب‌ها | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← کتاب‌ها 📖 جنگی که نجاتم داد کیمبرلی بروبیکر بردلی 🦊 پسرک، موش کور، روباه و اسب چارلی مکسی ⚡ مجموعه هری پاتر جی. کی. رولینگ 🎁 جعبه خاطرات جوآنا رولاند 📚 ماجراهای ریگو رزا جزئیات نسخه دقیق بعداً تکمیل می‌شود آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"books.html"},{"title":"ساختمان پزشکان","meta":"ساختمان پزشکان | آوا بیات","text":"ساختمان پزشکان | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← ساختمان پزشکان 🎬 ساختمان پزشکان معرفی یک مجموعه کمدی درباره نیما افشار و موقعیت‌های طنز زندگی کاری و خانوادگی او. ▶️ جست‌وجوی نسخه اصلی مشخصات عنوان: ساختمان پزشکان سال ساخت: ۱۳۹۰ کارگردان: سروش صحت کشور: ایران نوع: سریال آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"building-doctors.html"},{"title":"ارتباط با من","meta":"ارتباط با من | آوا بیات","text":"ارتباط با من | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← ارتباط با من 💌 اطلاعات تماس بعداً اینجا اضافه می‌شود. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"contact.html"},{"title":"زبان انگلیسی","meta":"زبان انگلیسی | آوا بیات","text":"زبان انگلیسی | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← زبان انگلیسی 🇬🇧 مسیر زبان انگلیسی من کتاب زبان من Got It 3 است. 📜 مدارک و کارنامه‌های زبان من بعداً اینجا اضافه می‌شوند. مشخصات کتاب: Got It 3 آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"english.html"},{"title":"بازی‌های فکری","meta":"بازی‌های فکری | آوا بیات","text":"بازی‌های فکری | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← بازی‌های فکری 💎 Splendor صفحه بازی 🟦 Azul صفحه بازی 🧩 پاستور صفحه بازی آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"games.html"},{"title":"شناخته شدن","meta":"شناخته شدن | آوا بیات","text":"شناخته شدن | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← شناخته شدن 🌟 شناخته شدن دوست دارم به خاطر چیزهایی که می‌سازم، یاد می‌گیرم و انجام می‌دهم شناخته شوم. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"goal-known.html"},{"title":"مهاجرت","meta":"مهاجرت | آوا بیات","text":"مهاجرت | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← مهاجرت ✈️ مهاجرت دوست دارم در آینده محیط تازه‌ای را تجربه کنم، بیشتر یاد بگیرم و مسیر خودم را بسازم. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"goal-migration.html"},{"title":"MISSION: NASA 🚀","meta":"ماموریت: ناسا | آوا بیات","text":"ماموریت: ناسا | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت به هدف‌ها ← FUTURE MISSION // AVA-01 MISSION: NASA 🚀 ساختن دانش، مهارت و تجربه برای تبدیل شدن به یک مهندس در دنیای فضا و فناوری؛ و رسیدن به جایی که بتوانم روی پروژه‌های واقعی فضایی کار کنم. SPACE ENGINEERING TECHNOLOGY NASA DESTINATION MISSION STATUS ACTIVE ماموریت در حال اجراست. DESTINATION NASA فضا و فناوری CURRENT STAGE LEARNING + BUILDING یادگیری و ساختن مهارت‌های اصلی MISSION TYPE ENGINEERING علم، کد، رباتیک و حل مسئله 01 // FINAL GOAL هدف این ماموریت چیست؟ تبدیل شدن به یک مهندس در حوزه فضا و فناوری، ساختن مهارت‌های فنی قوی و رسیدن به سطحی که بتوانم در پروژه‌های واقعی فضایی نقش داشته باشم. 02 // WHY THIS PATH چرا مسیر فضا؟ چون فضا چیزهایی را که بیشتر از همه دوست دارم کنار هم قرار می‌دهد: برنامه‌نویسی، رباتیک، علم، فناوری، خلاقیت و حل مسئله‌های سخت. 03 // CORE SYSTEMS مهارت‌هایی که باید بسازم سیستم‌های اصلی این ماموریت. 💻 برنامه‌نویسی تبدیل ایده‌ها به سیستم‌هایی که واقعاً کار می‌کنند. 🤖 رباتیک ساختن، آزمایش کردن و کنترل ماشین‌ها. 📐 ریاضی زبان پشت مهندسی و محاسبات. ⚛️ فیزیک فهمیدن اینکه دنیا و فضا چطور کار می‌کنند. 🇬🇧 زبان انگلیسی یادگیری و ارتباط در سطح جهانی. 🧠 حل مسئله فکر ک","url":"goal-nasa.html"},{"title":"هدف‌های من","meta":"هدف‌های من | آوا بیات","text":"هدف‌های من | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← هدف‌های من ✈️ مهاجرت یکی از هدف‌های آینده من. 🚀 مهندس ناسا شدن رویای بزرگ من در مهندسی و فضا. 🌟 شناخته شدن ساختن چیزهایی که ارزش دیده شدن داشته باشند. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"goals.html"},{"title":"مجموعه هری پاتر","meta":"مجموعه هری پاتر | آوا بیات","text":"مجموعه هری پاتر | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← مجموعه هری پاتر ⚡ Harry Potter هفت کتاب مجموعه هری پاتر و سنگ جادو — ۱۹۹۷ هری پاتر و تالار اسرار — ۱۹۹۸ هری پاتر و زندانی آزکابان — ۱۹۹۹ هری پاتر و جام آتش — ۲۰۰۰ هری پاتر و محفل ققنوس — ۲۰۰۳ هری پاتر و شاهزاده دورگه — ۲۰۰۵ هری پاتر و یادگاران مرگ — ۲۰۰۷ 📖 جست‌وجوی نسخه اصلی مشخصات نویسنده: جی. کی. رولینگ کشور: بریتانیا اولین انتشار: ۱۹۹۷ آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"harry-potter-books.html"},{"title":"هری پاتر و سنگ جادو","meta":"هری پاتر و سنگ جادو | آوا بیات","text":"هری پاتر و سنگ جادو | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← هری پاتر و سنگ جادو 🎬 هری پاتر و سنگ جادو معرفی هری می‌فهمد جادوگر است و نخستین سالش را در هاگوارتز آغاز می‌کند. ▶️ جست‌وجوی نسخه اصلی مشخصات عنوان: هری پاتر و سنگ جادو سال ساخت: ۲۰۰۱ کارگردان: کریس کلمبوس کشور: بریتانیا / ایالات متحده نوع: فیلم آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"harry-potter-movie.html"},{"title":"رویای من، بزرگ‌تر از آسمان است. ✨","meta":"آوا بیات | سایت شخصی","text":"آوا بیات | سایت شخصی آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English WELCOME TO AVA'S UNIVERSE ✨ رویای من، بزرگ‌تر از آسمان است. ✨ جایی برای رویاها، یادگیری، علاقه‌ها و مسیر آینده من. درباره آوا پروژه‌ها AVA\'S JOURNEY ✦ ‹ 01 🌍 START از زمین شروع می‌کنم یادگیری، کنجکاوی و ساختن؛ نقطه شروع هر مأموریت بزرگ. 02 🌐 LEARNING زبان و یادگیری هر مهارت تازه، پنجره‌ای جدید به دنیای بزرگ‌تر باز می‌کند. 03 🤖 BUILD برنامه‌نویسی و رباتیک ایده‌ها تبدیل به پروژه، کد و چیزهای واقعی می‌شوند. 04 ✨ DREAM BIG هدف‌های بزرگ‌تر رویاها فقط برای فکر کردن نیستند؛ برای دنبال کردن‌اند. 05 🚀 NEXT STOP NASA رویای من، بزرگ‌تر از آسمان است. ✨ دیدن هدف ناسا › دنیای آوا دنیای من را ببین هر بخش صفحه مخصوص خودش را دارد. 👩🏻‍🚀 درباره آوا من کی هستم و چه چیزهایی دوست دارم. 🎓 دانش‌آموز پایه هفتم و مسیر یادگیری من. 💻 برنامه‌نویسی دوره‌ها، مهارت‌ها و مدارک من. 🤖 رباتیک مقام چهارم رباتیک کشوری. 📚 کتاب‌ها کتاب‌های مورد علاقه‌ام و مشخصات آن‌ها. 🏃🏻‍♀️ ورزش بادی فلکس در . 🇬🇧 زبان انگلیسی Got It 3 و مدارک زبان من.  🎬 فیلم و سریال فیلم‌ها، انیمه‌ها و سریال‌های مورد علاقه‌ام. 🎵 موسیقی آهنگ‌های مورد علاقه من. 🧠 بازی‌های فکری بازی‌های فکری مورد علاقه من. 🎯 هدف‌های من سه","url":"index.html"},{"title":"جعبه خاطرات","meta":"جعبه خاطرات | آوا بیات","text":"جعبه خاطرات | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← جعبه خاطرات 📚 جعبه خاطرات معرفی کتاب داستانی تصویری درباره خاطره‌ها و نگه داشتن یاد کسانی که دوستشان داریم. 📖 جست‌وجوی نسخه اصلی مشخصات عنوان: جعبه خاطرات نویسنده: جوآنا رولاند کشور: ایالات متحده سال انتشار: ۲۰۱۷ آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"memory-box.html"},{"title":"فیلم و سریال","meta":"فیلم و سریال | آوا بیات","text":"فیلم و سریال | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← فیلم و سریال 🎬 ساختمان پزشکان سریال 🎬 پونیو انیمیشن 🎬 علاءالدین فیلم سینمایی ۲۰۱۹ 🎬 هری پاتر و سنگ جادو فیلم 🎬 استرنجر تینگز سریال آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"movies.html"},{"title":"موسیقی","meta":"موسیقی | آوا بیات","text":"موسیقی | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← موسیقی 🎵 خونه ما کوروش · جست‌وجوی نسخه اصلی 🎵 شب زده ابی · جست‌وجوی نسخه اصلی 🎵 ترسیدم ازت ددان · جست‌وجوی نسخه اصلی 🎵 لاله را دیدن شروین · جست‌وجوی نسخه اصلی 🎵 Meet You at Graveyard Cliff · جست‌وجوی نسخه اصلی آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"music.html"},{"title":"پاستور","meta":"پاستور | آوا بیات","text":"پاستور | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← پاستور 🧩 پاستور درباره بازی یکی از بازی‌های فکری مورد علاقه من؛ جزئیات نسخه دقیق بعداً اضافه می‌شود. 🔎 جست‌وجوی نسخه اصلی مشخصات نام: پاستور نوع: بازی فکری آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"pastor.html"},{"title":"پونیو","meta":"پونیو | آوا بیات","text":"پونیو | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← پونیو 🎬 پونیو معرفی داستان ماهی کوچکی به نام پونیو که دوست دارد انسان شود و با پسری به نام سوسکه دوست می‌شود. ▶️ جست‌وجوی نسخه اصلی مشخصات عنوان: پونیو سال ساخت: ۲۰۰۸ کارگردان: هایائو میازاکی کشور: ژاپن نوع: انیمیشن آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"ponyo.html"},{"title":"برنامه‌نویسی","meta":"برنامه‌نویسی | آوا بیات","text":"برنامه‌نویسی | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← برنامه‌نویسی 💻 مسیر برنامه‌نویسی من برنامه‌نویسی یکی از علاقه‌های اصلی من است. چند دوره علوم کامپیوتر را در Code.org گذرانده‌ام و دوست دارم ایده‌ها را به پروژه‌های واقعی تبدیل کنم. 📜 تصاویر مدارک Code.org من در این بخش قرار می‌گیرند. مدارک Course A — Code.org — 2023 Course B — Code.org — 2023 Course C — Code.org — 2023 Course D — Code.org — 2024 آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"programming.html"},{"title":"پروژه‌ها","meta":"پروژه‌ها | آوا بیات","text":"پروژه‌ها | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← پروژه‌ها 💻 برنامه‌نویسی پروژه‌ها و مدارک برنامه‌نویسی من. 🤖 رباتیک دستاورد کشوری من. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"projects.html"},{"title":"ماجراهای ریگو رزا","meta":"ماجراهای ریگو رزا | آوا بیات","text":"ماجراهای ریگو رزا | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← ماجراهای ریگو رزا 📚 ماجراهای ریگو رزا معرفی کتاب این صفحه برای اضافه کردن مشخصات دقیق همان نسخه‌ای که دوست داری آماده است. 📖 جست‌وجوی نسخه اصلی مشخصات عنوان: ماجراهای ریگو رزا نویسنده: — کشور: — سال انتشار: — آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"rigo-rosa.html"},{"title":"رباتیک","meta":"رباتیک | آوا بیات","text":"رباتیک | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← رباتیک 🏆 مقام چهارم رباتیک کشوری یکی از دستاوردهای مهم من کسب مقام چهارم در مسابقات رباتیک کشوری است. 🤖 مدارک و عکس‌های مسابقه بعداً اینجا اضافه می‌شوند. دستاورد رتبه: چهارم سطح: کشوری آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"robotics.html"},{"title":"⚙️ تنظیمات","meta":"تنظیمات | آوا بیات","text":"تنظیمات | آوا بیات آوا بیات 🇬🇧 English بازگشت ← ⚙️ تنظیمات 🌙 حالت نمایش ظاهر مورد علاقه‌ات را انتخاب کن. ☀️ روشن 🌙 تاریک 🌐 زبان سایت بین نسخه فارسی و انگلیسی جابه‌جا شو. 🇮🇷 فارسی 🇬🇧 English 🔤 اندازه نوشته کوچک متوسط بزرگ 🔔 اعلان‌ها برای قابلیت‌های آینده سایت. 🔔 روشن 🔕 خاموش 💾 ذخیره تنظیمات ذخیره تنظیمات 🧹 بازنشانی تنظیمات تنظیمات نمایش و اندازه نوشته به حالت اولیه برمی‌گردند. بازنشانی تنظیمات آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨","url":"settings.html"},{"title":"Splendor","meta":"Splendor | آوا بیات","text":"Splendor | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← Splendor 💎 Splendor درباره بازی یک بازی استراتژیک درباره جمع‌آوری جواهرات، مدیریت منابع و امتیازگیری. 🔎 جست‌وجوی نسخه اصلی مشخصات نام: Splendor نوع: بازی فکری آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"splendor.html"},{"title":"ورزش","meta":"ورزش | آوا بیات","text":"ورزش | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← ورزش 🏃🏻‍♀️ بادی فلکس من بادی فلکس انجام می‌دهم و در  تمرین می‌کنم. ورزش یکی از بخش‌های مهم فعالیت‌های من است. آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"sports.html"},{"title":"استرنجر تینگز","meta":"استرنجر تینگز | آوا بیات","text":"استرنجر تینگز | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← استرنجر تینگز 🎬 استرنجر تینگز معرفی مجموعه‌ای علمی‌تخیلی و رازآلود درباره گروهی از دوستان و اتفاق‌های عجیب شهر هاوکینز. ▶️ جست‌وجوی نسخه اصلی مشخصات عنوان: استرنجر تینگز سال ساخت: ۲۰۱۶ کارگردان: برادران دافر کشور: ایالات متحده نوع: سریال آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"stranger-things.html"},{"title":"دانش‌آموز","meta":"دانش‌آموز | آوا بیات","text":"دانش‌آموز | آوا بیات آوا بیات ☰ خانه درباره آوا پروژه‌ها ارتباط با من ⚙️ تنظیمات 🇬🇧 English بازگشت ← دانش‌آموز مسیر یادگیری من من دانش‌آموز پایه هفتم هستم. در کنار مدرسه، برنامه‌نویسی و زبان انگلیسی را دنبال می‌کنم و دوست دارم مهارت حل مسئله و خلاقیت را بیشتر کنم. چه چیزهایی یاد می‌گیرم؟ درس‌های مدرسه، زبان انگلیسی، برنامه‌نویسی، پروژه‌ها و مهارت‌هایی که برای آینده‌ام لازم دارم. مشخصات پایه: هفتم علاقه‌ها: برنامه‌نویسی، کتاب، انگلیسی، هنر و ورزش آوا بیات رویای من، بزرگ‌تر از آسمان است. ✨ ©","url":"student.html"}];
   let s={};
   try{s=JSON.parse(localStorage.getItem(key)||"{}")}catch(e){}
 
@@ -187,7 +187,7 @@
     b.setAttribute("aria-label",b.title);
     b.innerHTML="↑";
     document.body.appendChild(b);
-    const update=()=>b.classList.toggle("show",window.scrollY>170);
+    const update=()=>b.classList.toggle("show",window.scrollY>55);
     addEventListener("scroll",update,{passive:true});
     update();
     b.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
@@ -369,7 +369,8 @@
     addCursorGlow();
     addProgressRocket();
     addReveal();
-    addTilt();
+    // Tilt disabled: cards stay stable; homepage uses CSS float only.
+
     addHeroExit();
     addScrollStory();
   }
@@ -460,3 +461,166 @@
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initHorizontalJourney);
   else initHorizontalJourney();
 })();
+
+
+/* STEP 1 — Header active link + compact-on-scroll */
+(function(){
+  const header=document.querySelector(".header");
+  if(header){
+    const sync=()=>header.classList.toggle("ava-compact",window.scrollY>24);
+    addEventListener("scroll",sync,{passive:true});
+    sync();
+  }
+  const current=(location.pathname.split("/").pop()||"index.html").toLowerCase();
+  document.querySelectorAll(".nav-links a").forEach(a=>{
+    const href=(a.getAttribute("href")||"").split("#")[0].split("?")[0].split("/").pop().toLowerCase();
+    if(href===current)a.classList.add("ava-active");
+  });
+})();
+
+/* Exact-position navigation restore for Ava site. */
+(function(){
+  const POS_PREFIX="avaScroll:";
+  const RESTORE_KEY="avaRestoreOnce";
+
+  const pageKey=()=>location.pathname+location.search;
+  const save=()=>{
+    try{ sessionStorage.setItem(POS_PREFIX+pageKey(), String(Math.max(0, Math.round(window.scrollY||0)))); }catch(_){}
+  };
+
+  if("scrollRestoration" in history) history.scrollRestoration="manual";
+
+  let scrollTimer=0;
+  addEventListener("scroll",()=>{
+    clearTimeout(scrollTimer);
+    scrollTimer=setTimeout(save,60);
+  },{passive:true});
+  addEventListener("pagehide",save);
+  addEventListener("beforeunload",save);
+
+  // Save the exact position before every same-site navigation.
+  document.addEventListener("click",function(e){
+    const a=e.target.closest("a[href]");
+    if(!a || a.target==="_blank" || a.hasAttribute("download")) return;
+    try{
+      const u=new URL(a.href,location.href);
+      if(u.origin===location.origin) save();
+    }catch(_){}
+  },true);
+
+  // Back buttons behave like the browser Back button and request exact restoration.
+  document.addEventListener("click",function(e){
+    const a=e.target.closest("a.smart-back");
+    if(!a)return;
+    try{
+      const ref=document.referrer ? new URL(document.referrer) : null;
+      if(ref && ref.origin===location.origin && history.length>1){
+        e.preventDefault();
+        sessionStorage.setItem(RESTORE_KEY, ref.pathname+ref.search);
+        save();
+        history.back();
+      }
+      // If there is no usable same-site history, the link's normal href is the fallback.
+    }catch(_){}
+  });
+
+  const restoreIfRequested=()=>{
+    try{
+      const wanted=sessionStorage.getItem(RESTORE_KEY);
+      if(wanted!==pageKey()) return;
+      const raw=sessionStorage.getItem(POS_PREFIX+pageKey());
+      sessionStorage.removeItem(RESTORE_KEY);
+      if(raw!==null){
+        const y=Math.max(0,Number(raw)||0);
+        requestAnimationFrame(()=>requestAnimationFrame(()=>window.scrollTo({top:y,left:0,behavior:"auto"})));
+        setTimeout(()=>window.scrollTo(0,y),120);
+      }
+    }catch(_){}
+  };
+
+  if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",restoreIfRequested,{once:true});
+  }else{
+    restoreIfRequested();
+  }
+  addEventListener("pageshow",restoreIfRequested);
+})();
+
+
+/* Rocket drag + remove right-side top button */
+(function(){
+  const setup = () => {
+    const removeBackTop = () => {
+      document.getElementById("avaBackTop")?.remove();
+      document.querySelectorAll(".ava-back-top").forEach(el=>el.remove());
+    };
+    removeBackTop();
+    if(!document.body.dataset.avaBackTopObserver){
+      const observer = new MutationObserver(removeBackTop);
+      observer.observe(document.body, {childList:true, subtree:true});
+      document.body.dataset.avaBackTopObserver = "1";
+    }
+
+    const bar = document.querySelector(".ava-scroll-progress");
+    if(!bar || bar.dataset.dragReady==="1") return;
+    bar.dataset.dragReady = "1";
+
+    const moveByClientY = (clientY) => {
+      const rect = bar.getBoundingClientRect();
+      const y = Math.max(0, Math.min(rect.height, clientY - rect.top));
+      const ratio = rect.height ? (y / rect.height) : 0;
+      const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      window.scrollTo({ top: ratio * maxScroll, behavior: "auto" });
+    };
+
+    let dragging = false;
+
+    const startDrag = (clientY) => {
+      dragging = true;
+      bar.classList.add("dragging");
+      moveByClientY(clientY);
+    };
+    const dragMove = (clientY) => {
+      if(!dragging) return;
+      moveByClientY(clientY);
+    };
+    const endDrag = () => {
+      dragging = false;
+      bar.classList.remove("dragging");
+    };
+
+    bar.addEventListener("pointerdown", (e) => {
+      e.preventDefault();
+      startDrag(e.clientY);
+    });
+    window.addEventListener("pointermove", (e) => dragMove(e.clientY), {passive:false});
+    window.addEventListener("pointerup", endDrag);
+    window.addEventListener("pointercancel", endDrag);
+
+    bar.addEventListener("touchstart", (e) => {
+      if(!e.touches.length) return;
+      e.preventDefault();
+      startDrag(e.touches[0].clientY);
+    }, {passive:false});
+    window.addEventListener("touchmove", (e) => {
+      if(!dragging || !e.touches.length) return;
+      e.preventDefault();
+      dragMove(e.touches[0].clientY);
+    }, {passive:false});
+    window.addEventListener("touchend", endDrag);
+  };
+
+  const initWhenReady = () => {
+    setup();
+    setTimeout(setup, 350);
+    setTimeout(setup, 1000);
+  };
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", initWhenReady, {once:true});
+  } else {
+    initWhenReady();
+  }
+  window.addEventListener("pageshow", initWhenReady);
+})();
+
