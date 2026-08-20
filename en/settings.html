@@ -7,7 +7,17 @@
 <div class="setting"><h3>🔔 Notifications</h3><p>This is reserved for future website features.</p><div class="options"><button class="btn option" data-notify="on">🔔 On</button><button class="btn option" data-notify="off">🔕 Off</button></div></div>
 <div class="setting"><h3>💾 Save settings</h3><button class="btn primary" id="save">Save settings</button></div>
 <div class="setting"><h3>🧹 Reset settings</h3><p>Reset display and text settings to their defaults.</p><button class="btn danger" id="reset">Reset settings</button></div>
-</div></section></main><footer><div class="container footer"><strong>Ava Bayat</strong><span>My dream is bigger than the sky. ✨</span></div></footer>
+</div></section></main><footer><div class="container footer"><strong>Ava Bayat</strong><span>My dream is bigger than the sky. ✨</span></div>
+<div class="ava-social-footer" aria-label="Social links">
+  <a class="ava-social-link" href="https://t.me/AvaBayattt" target="_blank" rel="noopener noreferrer">
+    <span class="ava-social-icon">✈</span><span>Telegram page</span>
+  </a>
+  <a class="ava-social-link" href="https://github.com/bayatava1393-lang" target="_blank" rel="noopener noreferrer">
+    <span class="ava-social-icon">⌘</span><span>GitHub page</span>
+  </a>
+</div>
+
+</footer>
 <script src="script.js"></script><script>
 let s={};try{s=JSON.parse(localStorage.getItem("avaSettings")||"{}")}catch(e){}
 function apply(){const t=s.theme||"light";document.documentElement.classList.toggle("dark",t==="dark");document.body.classList.toggle("dark",t==="dark");document.documentElement.style.fontSize=s.fontSize==="small"?"14px":s.fontSize==="large"?"18px":"16px";document.querySelectorAll("[data-theme]").forEach(b=>b.classList.toggle("active",b.dataset.theme===t));document.querySelectorAll("[data-size]").forEach(b=>b.classList.toggle("active",b.dataset.size===(s.fontSize||"medium")));document.querySelectorAll("[data-notify]").forEach(b=>b.classList.toggle("active",b.dataset.notify===(s.notifications||"on")));}

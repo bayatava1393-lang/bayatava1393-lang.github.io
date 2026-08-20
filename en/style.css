@@ -1356,3 +1356,58 @@ body::-webkit-scrollbar{
   display: none !important;
   background: transparent !important;
 }
+
+
+/* Footer social links */
+.ava-social-footer{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:16px;
+  padding-top:14px;
+  border-top:1px solid var(--line);
+}
+.ava-social-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:42px;
+  padding:8px 14px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:var(--surface);
+  color:var(--text);
+  font-weight:800;
+  font-size:13px;
+  transition:.2s ease;
+}
+.ava-social-link:hover{
+  transform:translateY(-2px);
+  border-color:rgba(85,203,211,.55);
+  box-shadow:0 10px 26px rgba(66,168,190,.14);
+}
+.ava-social-icon{
+  width:24px;
+  height:24px;
+  display:inline-grid;
+  place-items:center;
+  border-radius:8px;
+  background:var(--surface2);
+  color:var(--primary-dark);
+  font-weight:900;
+}
+
+
+/* Rocket scroll control: instant response, no delay */
+.ava-scroll-progress,
+.ava-scroll-progress-rocket{
+  transition:none !important;
+  animation:none !important;
+}
+.ava-scroll-progress{
+  touch-action:none !important;
+}

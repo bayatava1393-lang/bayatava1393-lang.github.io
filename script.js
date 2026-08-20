@@ -446,6 +446,8 @@
     track.addEventListener("mouseleave",e=>{if(down&&e.pointerType==="mouse")finish(e)});
 
     track.addEventListener("click",e=>{
+      const interactive=e.target.closest("a,button");
+      if(interactive && !moved){ return; }
       if(moved){e.preventDefault();e.stopPropagation();moved=false;}
     },true);
 
@@ -624,3 +626,59 @@
   window.addEventListener("pageshow", initWhenReady);
 })();
 
+
+/* Ensure NASA journey CTA always opens the NASA goal page. */
+document.addEventListener("click",function(e){
+  const a=e.target.closest(".ava-hj-slide.nasa a[href]");
+  if(!a)return;
+  e.stopPropagation();
+  const href=a.getAttribute("href");
+  if(href) window.location.href=href;
+},false);
+
+
+
+/* Instant rocket drag response */
+(function(){
+  const setupInstantRocket = () => {
+    const bar = document.querySelector(".ava-scroll-progress");
+    if(!bar || bar.dataset.instantRocket==="1") return;
+    bar.dataset.instantRocket="1";
+
+    const go = (clientY) => {
+      const rect = bar.getBoundingClientRect();
+      const y = Math.max(0, Math.min(rect.height, clientY - rect.top));
+      const ratio = rect.height ? y / rect.height : 0;
+      const max = Math.max(0, document.documentElement.scrollHeight - innerHeight);
+      window.scrollTo(0, ratio * max);
+    };
+
+    let active = false;
+    bar.addEventListener("pointerdown", e => {
+      active = true;
+      bar.setPointerCapture?.(e.pointerId);
+      e.preventDefault();
+      go(e.clientY);
+    }, {passive:false});
+
+    bar.addEventListener("pointermove", e => {
+      if(!active) return;
+      e.preventDefault();
+      go(e.clientY);
+    }, {passive:false});
+
+    const end = e => {
+      active = false;
+      try{ bar.releasePointerCapture?.(e.pointerId); }catch(_){}
+    };
+    bar.addEventListener("pointerup", end);
+    bar.addEventListener("pointercancel", end);
+  };
+
+  if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded", () => setTimeout(setupInstantRocket,0), {once:true});
+  }else{
+    setTimeout(setupInstantRocket,0);
+  }
+  addEventListener("pageshow", () => setTimeout(setupInstantRocket,0));
+})();

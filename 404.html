@@ -47,4 +47,14 @@ document.getElementById("searchBtn").onclick=()=>{box.classList.toggle("open");i
 function render(v){const x=n(v);let items=!x?DATA.slice(0,6):DATA.filter(i=>n(i.title+" "+i.meta+" "+i.text).includes(x)).slice(0,8);r.innerHTML=items.length?items.map(i=>`<a href="${i.url}">✦ ${esc(i.title)}<small>${esc(i.meta||"")}</small></a>`).join(""):`<small style="padding:14px">چیزی پیدا نشد 🚀</small>`}
 q.oninput=e=>render(e.target.value);
 </script>
+
+<div class="ava-social-footer" aria-label="شبکه‌های اجتماعی">
+  <a class="ava-social-link" href="https://t.me/AvaBayattt" target="_blank" rel="noopener noreferrer">
+    <span class="ava-social-icon">✈</span><span>صفحه تلگرام:</span>
+  </a>
+  <a class="ava-social-link" href="https://github.com/bayatava1393-lang" target="_blank" rel="noopener noreferrer">
+    <span class="ava-social-icon">⌘</span><span>صفحه گیت‌هاب:</span>
+  </a>
+</div>
+
 </body></html>
