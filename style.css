@@ -1411,3 +1411,35 @@ body::-webkit-scrollbar{
 .ava-scroll-progress{
   touch-action:none !important;
 }
+
+
+/* Certificate gallery polish */
+.certs-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+.cert-item{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:14px;
+  box-shadow:var(--shadow);
+}
+.cert-item a{display:block}
+.cert-item img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:14px;
+  object-fit:contain;
+  background:#fff;
+}
+.cert-item h3{
+  margin:12px 4px 2px;
+  font-size:15px;
+  text-align:center;
+}
+@media(max-width:760px){
+  .certs-grid{grid-template-columns:1fr}
+}
